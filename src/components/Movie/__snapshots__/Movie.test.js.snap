@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie should match the snapshot 1`] = `
+<div
+  className="movie"
+>
+  <div
+    className="movie-poster"
+  />
+  <button
+    className="fav-btn"
+  >
+    <img
+      className="fav-heart"
+      src=""
+    />
+    FAVORITE
+  </button>
+</div>
+`;
