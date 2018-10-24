@@ -10,14 +10,14 @@
 //   id
 // })
 
-// export const loginUser = (email, password, id) => ({
-//   type: 'LOGIN_USER',
+// export const validateUser = (email, password, id) => ({
+//   type: 'VALIDATE_USER',
 //   email,
 //   password,
 //   id
 // })
 
-// export const logoutUser = (id) => ({
-//   type: 'LOGOUT_USER',
+// export const toggleUserLogin = (id) => ({
+//   type: 'TOGGLE_USER_LOGIN',
 //   id
 // })
