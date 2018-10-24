@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Nav from '../Nav';
-import wesIcon from '../../assets/images/wes-logo.png'
+import wesIcon from '../../assets/images/wes.png'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
+        <header className="header-container">
           <div className="logo">
             <img
               src={ wesIcon }

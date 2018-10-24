@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
+import fullHeart from '../../assets/images/full-heart.svg'
+import emptyHeart from '../../assets/images/empty-heart.svg'
+
 
 const Movie = () => {
 
@@ -11,7 +14,7 @@ const Movie = () => {
       <button className='fav-btn'>
         <img 
           className='fav-heart'
-          src=''
+          src={emptyHeart}
         />
         FAVORITE
       </button>
