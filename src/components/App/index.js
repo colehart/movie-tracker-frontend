@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Route from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import Nav from '../Nav';
+import wesIcon from '../../assets/images/wes-logo.png'
 import './App.css';
 
 class App extends Component {
@@ -9,7 +11,7 @@ class App extends Component {
         <header>
           <div className="logo">
             <img
-              src="../assets/images/wes-logo.png"
+              src={ wesIcon }
               className="logo-icon"
               alt="An icon of Wes Anderson's face"
             />
