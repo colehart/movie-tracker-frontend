@@ -11,7 +11,13 @@ import './index.css';
 
 // const store = createStore(rootReducer, devTools);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const router = (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  )
+
+ReactDOM.render(router, document.getElementById('root'));
 
 
 // ReactDOM.render(

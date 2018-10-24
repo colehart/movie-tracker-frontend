@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './index.js';
+import Nav from './index.js';
 
-describe('App', () => {
+describe('Nav', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<App />);
+    wrapper = shallow(<Nav />);
   })
 
   it('should match the snapshot', () => {

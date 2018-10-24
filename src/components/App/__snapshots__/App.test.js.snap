@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <div
+      className="logo"
+    >
+      <img
+        alt="An icon of Wes Anderson's face"
+        className="logo-icon"
+        src="wes-logo.png"
+      />
+      <h1>
+        WesTracker
+      </h1>
+    </div>
+    <Nav />
+  </header>
+  <Route />
+</div>
+`;
