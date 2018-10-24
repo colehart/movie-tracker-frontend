@@ -2,3 +2,18 @@
   text-align: center;
 }
 
+.header-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 7%;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo-icon {
+  height: 150px;
+}
