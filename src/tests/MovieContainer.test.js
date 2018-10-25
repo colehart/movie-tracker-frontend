@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MovieContainer from './index.js';
+import MovieContainer from '../components/MovieContainer';
 
 describe('MovieContainer', () => {
   let wrapper;

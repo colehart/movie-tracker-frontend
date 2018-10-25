@@ -1,4 +1,4 @@
-import * as API from './index';
+import * as API from '../utils';
 
 describe('API', () => {
   describe('fetchMovies', () => {
