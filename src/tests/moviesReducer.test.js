@@ -15,4 +15,14 @@ describe('moviesReducer', () => {
     
     expect(result).toEqual(expected);
   })
+
+  it('should return state with movies', () => {
+    const initialState = [];
+    const expected = movies;
+
+    const result = moviesReducer(initialState, Actions.addMovies(movies))
+
+    expect(result).toEqual(expected)
+
+  })
 })
