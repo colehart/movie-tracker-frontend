@@ -10,14 +10,15 @@ const Movie = ( { poster_path } ) => {
   return (
     <div className='movie'>
       <div className='movie-poster'>
-      </div>
-      <button className='fav-btn'>
         <img 
-          className='fav-heart'
+          className='poster'
           src={`http://image.tmdb.org/t/p/w185//${poster_path}`}
         />
-        FAVORITE
-      </button>
+      </div>
+      <div className='fav-container'>
+        <p className='fav-text'>FAVORITE</p>
+        <div className='fav-btn'></div>
+      </div>
     </div>
   )
 }
