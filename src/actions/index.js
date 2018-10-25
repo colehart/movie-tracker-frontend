@@ -1,3 +1,8 @@
+export const addMovies = (movies) => ({
+  type: 'ADD_MOVIES',
+  movies
+})
+
 // export const toggleFavorite = (id) => ({
 //   type: 'TOGGLE_FAVORITE',
 //   id

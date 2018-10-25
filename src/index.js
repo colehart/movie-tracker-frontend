@@ -4,26 +4,19 @@ import App from './components/App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
-// import { rootReducer } from './reducers'
+import { rootReducer } from './reducers'
 import './index.css';
 
-// const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
-// const store = createStore(rootReducer, devTools);
+const store = createStore(rootReducer, devTools);
 
-const router = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+const provider = (
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
   )
 
-ReactDOM.render(router, document.getElementById('root'));
-
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </Provider>
-// )
+ReactDOM.render(provider, document.getElementById('root'));
