@@ -1,15 +1,15 @@
-* {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  box-sizing: border-box;
-  color: #D4A931;
-}
-
-body {
-  background-color: #70929C;
+@font-face {
+  font-family: "Futura";
+  src: url("../../assets/fonts/Futura/Futura") format("woff");
+  font-weight: 400 700;
 }
 
 .App {
-  text-align: center;
+  background-color: #70929C;
+  font-family: "Futura", sans-serif;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  color: #D4A931;
 }
 
 .header-container {
@@ -23,7 +23,8 @@ body {
 .logo {
   display: flex;
   align-items: flex-end;
-  font-size: 4rem;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .logo-icon {
