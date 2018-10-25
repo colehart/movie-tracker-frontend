@@ -6,7 +6,7 @@ describe('Movie', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Movie />);
+    wrapper = shallow(<Movie poster_path='something.jpg'/>);
   })
 
   it('should match the snapshot', () => {
