@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav should match the snapshot 1`] = `
-<nav>
+<nav
+  className="nav-container"
+>
   <NavLink
     activeClassName="active"
     aria-current="page"
+    className="nav-link"
     to="/favorites"
   >
     <div
@@ -25,11 +28,13 @@ exports[`Nav should match the snapshot 1`] = `
   >
     <img
       className="login-icon"
-      src=""
+      src="margot.png"
     />
     <p
       className="login-text"
-    />
+    >
+      Login
+    </p>
   </NavLink>
 </nav>
 `;
