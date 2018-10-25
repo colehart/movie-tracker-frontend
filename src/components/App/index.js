@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addMovies } from '../../actions';
 import Nav from '../Nav';
-import wesIcon from '../../assets/images/wes.png'
+import wesIcon from '../../assets/images/wes.png';
 import './App.css';
+import * as API from '../../utils';
+import apiKey from '../../API-key.js';
+
+
 
 class App extends Component {
+  constructor() {
+    super();
+
+  }
+
+  async componentDidMount() {
+    const movies = await API.fetchMovies(apiKey)
+    await this.props.addMovies(movies)
+  }
+
   render() {
     return (
       <div className="App">
@@ -25,4 +41,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  addMovies: (movies) => dispatch(addMovies(movies))
+})
+
+export default connect(null, mapDispatchToProps)(App);
