@@ -12,4 +12,4 @@ describe('actions', () => {
     const result = Actions.addMovies(mockMovies)
     expect(result).toEqual(expectedAction)
   })
-})   
+})
