@@ -9,14 +9,7 @@ import * as API from '../../utils';
 import apiKey from '../../API-key.js';
 import MovieContainer from '../MovieContainer';
 
-
-
 class App extends Component {
-  constructor() {
-    super();
-
-  }
-
   async componentDidMount() {
     const movies = await API.fetchMovies(apiKey)
     await this.props.addMovies(movies)
@@ -36,9 +29,10 @@ class App extends Component {
           </div>
           <Nav />
         </header>
-        <Route 
-          path='/'
-          component={ MovieContainer }/>
+        <Route
+          exact path='/'
+          component={ MovieContainer }
+        />
       </div>
     );
   }
