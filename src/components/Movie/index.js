@@ -5,7 +5,7 @@ import fullHeart from '../../assets/images/full-heart.svg'
 import emptyHeart from '../../assets/images/empty-heart.svg'
 
 
-const Movie = () => {
+const Movie = ( { poster_path } ) => {
 
   return (
     <div className='movie'>
@@ -14,7 +14,7 @@ const Movie = () => {
       <button className='fav-btn'>
         <img 
           className='fav-heart'
-          src={emptyHeart}
+          src={`http://image.tmdb.org/t/p/w185//${poster_path}`}
         />
         FAVORITE
       </button>

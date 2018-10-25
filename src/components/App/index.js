@@ -7,6 +7,7 @@ import wesIcon from '../../assets/images/wes.png';
 import './App.css';
 import * as API from '../../utils';
 import apiKey from '../../API-key.js';
+import MovieContainer from '../MovieContainer';
 
 
 
@@ -35,7 +36,9 @@ class App extends Component {
           </div>
           <Nav />
         </header>
-        <Route />
+        <Route 
+          path='/'
+          component={ MovieContainer }/>
       </div>
     );
   }

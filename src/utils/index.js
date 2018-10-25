@@ -5,7 +5,7 @@ export const fetchMovies = async (apiKey) => {
       throw Error(response.statusText);
   } else {
     const movieData = await response.json();
-    const results = {...movieData.results}
+    const results = [...movieData.results]
     return results
   }
 }
