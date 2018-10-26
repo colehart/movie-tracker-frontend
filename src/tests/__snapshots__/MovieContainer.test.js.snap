@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieContainer should match the snapshot 1`] = `undefined`;
+exports[`MovieContainer should match the snapshot 1`] = `
+<div
+  className="movie-container"
+>
+  <Movie
+    backdrop_path="backdrop-path1.jpg"
+    id={1}
+    isFavorite={false}
+    key="1"
+    overview="Great film."
+    poster_path="poster-path1.jpg"
+    release_date="2014-02-26"
+    title="The Grand Budapest Hotel"
+  />
+  <Movie
+    backdrop_path="backdrop-path2.jpg"
+    id={2}
+    isFavorite={false}
+    key="2"
+    overview="Real good film."
+    poster_path="poster-path2.jpg"
+    release_date="2015-03-27"
+    title="The Life Aquatic with Steve Zissou"
+  />
+</div>
+`;

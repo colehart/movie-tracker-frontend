@@ -9,7 +9,7 @@ exports[`Movie should match the snapshot 1`] = `
   >
     <img
       className="poster"
-      src="http://image.tmdb.org/t/p/w342//undefined"
+      src="http://image.tmdb.org/t/p/w342//something.jpg"
     />
   </div>
   <div

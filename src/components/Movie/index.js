@@ -21,4 +21,8 @@ const Movie = ( { poster_path } ) => {
   )
 }
 
+Movie.propTypes = {
+  poster_path: PropTypes.string.isRequired
+}
+
 export default Movie;

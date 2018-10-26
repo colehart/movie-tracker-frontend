@@ -5,9 +5,9 @@ import Movie from '../Movie';
 import { connect } from 'react-redux';
 
 
-const MovieContainer = (props) => {
+export const MovieContainer = (props) => {
   const movies = props.movies.map(movie => {
-    return <Movie { ...movie }/>
+    return <Movie { ...movie } key={movie.id} />
   })
 
   return (
@@ -20,6 +20,10 @@ const MovieContainer = (props) => {
 const mapStateToProps = (state) => ({
   movies: state.movies
 })
+
+MovieContainer.propTypes = {
+  movies: PropTypes.array.isRequired
+}
 
 
 export default connect(mapStateToProps)(MovieContainer);

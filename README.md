@@ -11,20 +11,24 @@ Project spec can be found [here](https://github.com/turingschool-examples/movie-
 ## Wireframe
 MovieTracker is a single page web app where you can create an account, search and store your favorite Wes Anderson films.
 
-[![Alt text](./src/assets/movietracker_wireframe.jpg "App Wireframe")]
+![Alt text](./src/assets/images/desktopWireframe1.png "App Wireframe")
+
+![Alt text](./src/assets/images/desktopWireframe2.png "Active App Wireframe")
 
 ## App Architecture
 
 ```
-App (stateful)
+Provider
 |
-|_ Header (stateless)
-|
-|
-|_ CardContainer (stateless)
+|_ BrowserRouter
+  |
+  |_ App (stateful)
     |
-    |_ Card (x n depending on API data) (stateful)
-
+    |_ Nav (stateless)
+    |
+    |_ MovieContainer (stateless)
+        |
+        |_ Movie (x n depending on API data) (stateless)
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
