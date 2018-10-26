@@ -7,17 +7,6 @@
   text-decoration: none;
 }
 
-.fav-btn {
-  height: 40px;
-  width: 40px;
-  background-image: url('../../assets/images/empty-heart.svg');
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-}
-
 .login-btn {
   display: flex;
   align-items: center;
