@@ -27,4 +27,8 @@ const Nav = (props) => {
   )
 }
 
+Nav.propTypes = {
+  userLoggedIn: PropTypes.bool.isRequired
+}
+
 export default Nav;
