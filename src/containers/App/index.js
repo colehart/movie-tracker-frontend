@@ -31,7 +31,7 @@ export class App extends Component {
             />
             <h1>WesTracker</h1>
           </NavLink>
-          <Nav userLoggedIn={user ? true : false} />
+          <Nav userLoggedIn={user.email ? true : false} />
         </header>
         <Route
           exact path='/'
@@ -55,6 +55,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 App.propTypes = {
+  user: PropTypes.object.isRequired,
   addMovies: PropTypes.func.isRequired
 }
 

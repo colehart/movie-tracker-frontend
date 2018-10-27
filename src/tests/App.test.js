@@ -11,7 +11,7 @@ describe('App', () => {
 
   beforeEach(() => {
     mockAddMovies = jest.fn();
-    wrapper = shallow(<App addMovies={mockAddMovies}/>);
+    wrapper = shallow(<App addMovies={mockAddMovies} user={{}} />);
   })
 
   describe('App Component', () => {
