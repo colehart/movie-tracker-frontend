@@ -15,11 +15,16 @@ export class LoginForm extends Component {
     this.setState({[name]: value})
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+
+  }
+
   render() {
     const { email, password } = this.state
 
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h2>Have an account?</h2>
         <input
           className="email-login"

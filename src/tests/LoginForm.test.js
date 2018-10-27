@@ -42,7 +42,20 @@ describe('LoginForm', () => {
 
   it('should update state when handleInputChange is called', () => {
     const mockEvent = { target: { name: 'email', value: 'wes@anderson.com'} }
+
     wrapper.instance().handleInputChange(mockEvent)
+
     expect(wrapper.state('email')).toBe('wes@anderson.com')
+  })
+
+  it('calls handleSubmit onSubmit of the form', () => {
+    wrapper = mount(<LoginForm />)
+    const spy = spyOn(wrapper.instance(), 'handleSubmit')
+    const mockEvent = { preventDefault: jest.fn() }
+    wrapper.instance().forceUpdate()
+
+    wrapper.find('form').simulate('submit', mockEvent)
+
+    expect(spy).toHaveBeenCalled()
   })
 })
