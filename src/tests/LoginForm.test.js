@@ -16,15 +16,33 @@ describe('LoginForm', () => {
     expect(wrapper.state()).toMatchSnapshot()
   })
 
-  it('should update state with change to inputs', () => {
+  it('should call handleInputChange when email input is changed', () => {
     wrapper = mount(<LoginForm />)
 
     const spy = spyOn(wrapper.instance(), 'handleInputChange')
-      wrapper.instance().forceUpdate()
-      const mockEvent = { target: { value: 'something'} }
+    wrapper.instance().forceUpdate()
+    const mockEvent = { target: { value: 'something'} }
 
-      wrapper.find('.email-login').simulate('change', mockEvent)
+    wrapper.find('.email-login').simulate('change', mockEvent)
 
-      expect(spy).toHaveBeenCalled()
+    expect(spy).toHaveBeenCalled()
+  })
+
+  it('should call handleInputChange when password input is changed', () => {
+    wrapper = mount(<LoginForm />)
+
+    const spy = spyOn(wrapper.instance(), 'handleInputChange')
+    wrapper.instance().forceUpdate()
+    const mockEvent = { target: { value: 'something'} }
+
+    wrapper.find('.password-login').simulate('change', mockEvent)
+
+    expect(spy).toHaveBeenCalled()
+  })
+
+  it('should update state when handleInputChange is called', () => {
+    const mockEvent = { target: { name: 'email', value: 'wes@anderson.com'} }
+    wrapper.instance().handleInputChange(mockEvent)
+    expect(wrapper.state('email')).toBe('wes@anderson.com')
   })
 })

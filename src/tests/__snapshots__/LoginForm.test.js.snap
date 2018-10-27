@@ -10,6 +10,15 @@ exports[`LoginForm should match the snapshot 1`] = `
     name="email"
     onChange={[Function]}
     placeholder="wes@anderson.com"
+    type="email"
+    value=""
+  />
+  <input
+    className="password-login"
+    name="password"
+    onChange={[Function]}
+    placeholder="Type password here"
+    type="password"
     value=""
   />
 </form>
@@ -18,5 +27,6 @@ exports[`LoginForm should match the snapshot 1`] = `
 exports[`LoginForm state should match the snapshot 1`] = `
 Object {
   "email": "",
+  "password": "",
 }
 `;

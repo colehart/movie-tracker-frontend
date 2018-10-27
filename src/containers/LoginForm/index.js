@@ -5,7 +5,8 @@ export class LoginForm extends Component {
   constructor() {
     super()
     this.state = {
-      email: ''
+      email: '',
+      password: ''
     }
   }
 
@@ -15,17 +16,26 @@ export class LoginForm extends Component {
   }
 
   render() {
-    const {email} = this.state
+    const { email, password } = this.state
 
     return(
       <form>
         <h2>Have an account?</h2>
         <input
           className="email-login"
+          type="email"
           name="email"
           value={email}
           onChange={this.handleInputChange}
           placeholder="wes@anderson.com"
+        />
+        <input
+          className="password-login"
+          type="password"
+          name="password"
+          value={password}
+          onChange={this.handleInputChange}
+          placeholder="Type password here"
         />
       </form>
     )
