@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { addUser } from '../../actions';
 import * as API from '../../utils'
@@ -80,5 +81,9 @@ export class LoginForm extends Component {
 export const mapDispatchToProps = (dispatch) => ({
   addUser: (email, password, id) => dispatch(addUser(email, password, id))
 })
+
+LoginForm.propTypes = {
+  addUser: PropTypes.func.isRequired
+}
 
 export default connect(null, mapDispatchToProps)(LoginForm);

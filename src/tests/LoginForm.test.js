@@ -7,18 +7,20 @@ import * as Actions from '../actions'
 describe('LoginForm', () => {
   describe('LoginFormComponent', () => {
     let wrapper;
+    let mockAddUser;
     beforeEach(() => {
-      wrapper = mount(<LoginForm />);
+      mockAddUser = jest.fn()
+      wrapper = mount(<LoginForm addUser={mockAddUser}/>);
     })
 
     it('should match the snapshot', () => {
-      wrapper = shallow(<LoginForm />)
+      wrapper = shallow(<LoginForm addUser={mockAddUser}/>)
 
       expect(wrapper).toMatchSnapshot()
     })
 
     it('state should match the snapshot', () => {
-      wrapper = shallow(<LoginForm />)
+      wrapper = shallow(<LoginForm addUser={mockAddUser}/>)
 
       expect(wrapper.state()).toMatchSnapshot()
     })
