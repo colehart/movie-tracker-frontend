@@ -7,15 +7,15 @@ import userIcon from '../../assets/images/margot.png'
 const Nav = () => {
   return (
     <nav className="nav-container">
-      <NavLink 
-        className="nav-link" 
+      <NavLink
+        className="fav-btn-group"
         to="/favorites">
-        <div className="fav-btn">
+        <div className="fav-btn-nav">
           <span className="num-favs">0</span>
         </div>
       </NavLink>
       <NavLink to="/login" className="login-btn">
-          <img 
+          <img
             className="login-icon"
             src={ userIcon } />
           <p className="login-text">Login</p>

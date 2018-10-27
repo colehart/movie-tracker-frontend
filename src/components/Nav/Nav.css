@@ -1,10 +1,25 @@
 .nav-container {
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
+  width: 200px;
+  font-size: 1.25rem;
 }
 
-.nav-link {
-  text-decoration: none;
+.fav-btn-group {
+}
+
+.fav-btn-nav {
+  height: 50px;
+  width: 50px;
+  background-image: url('../../assets/images/hatFull-red.svg');
+  background-size: cover;
+}
+
+.num-favs {
+  position: relative;
+  top: 5px;
+  left: 20px;
 }
 
 .login-btn {
@@ -13,7 +28,12 @@
 }
 
 .login-icon {
-  height: 40px;
+  height: 50px;
   background-image: url('../../assets/images/margot.png');
   background-size: cover;
+}
+
+a {
+  color: #D4A931;
+  text-decoration: none;
 }
