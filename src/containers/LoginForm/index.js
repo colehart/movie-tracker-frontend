@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as API from '../../utils'
+import './LoginForm.css'
 
 export class LoginForm extends Component {
   constructor() {
@@ -26,27 +27,37 @@ export class LoginForm extends Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <h2>Have an account?</h2>
-        <input
-          className="email-login"
-          type="email"
-          name="email"
-          value={email}
-          onChange={this.handleInputChange}
-          placeholder="wes@anderson.com"
-        />
-        <input
-          className="password-login"
-          type="password"
-          name="password"
-          value={password}
-          onChange={this.handleInputChange}
-          placeholder="Type password here"
-        />
+        <div className="input-container">
+          <input
+            className="email-login"
+            type="email"
+            name="email"
+            value={email}
+            onChange={this.handleInputChange}
+            placeholder="wes@anderson.com"
+          />
+          <input
+            className="password-login"
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleInputChange}
+            placeholder="Type password here"
+          />
+        </div>
         <button
           className="submit-login"
           onClick={this.handleSubmit}
         >Login
         </button>
+        <div className="sign-up-container">
+          <h3>Need an account?</h3>
+          <button
+            className="sign-up-btn"
+          >
+          Sign Up
+          </button>
+        </div>
       </form>
     )
   }
