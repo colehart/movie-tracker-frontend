@@ -45,6 +45,10 @@ export class App extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  user: state.user
+})
+
 export const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies))
 })
@@ -53,4 +57,4 @@ App.propTypes = {
   addMovies: PropTypes.func.isRequired
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

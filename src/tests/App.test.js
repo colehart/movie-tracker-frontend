@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App, mapDispatchToProps } from '../containers/App';
+import { App, mapDispatchToProps, mapStateToProps } from '../containers/App';
+import { mockUser } from './testMocks';
 import * as API from '../utils';
 import * as Actions from '../actions'
 
@@ -49,6 +50,19 @@ describe('App', () => {
       mappedProps.addMovies(movies)
 
       expect(mockDispatch).toHaveBeenCalledWith(expected)
+    })
+  })
+
+  describe('mapStateToProps', () => {
+    it('should parse the user from state', () => {
+      const mockState = {
+        user: mockUser
+      }
+
+      const expected = mockUser
+
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps.user).toEqual(expected)
     })
   })
 })

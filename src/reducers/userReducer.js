@@ -11,5 +11,5 @@ export const userReducer = (state = {}, action) => {
   }
 }
 
-//when guest clicks favorite, popup/prompt to sign up.
-//when guest signs up successfully, user is logged in and fave is added
+//when guest clicks favorite, route to login.
+//when guest signs up successfully, user is logged in, returned to / (extension: or individual movie page) and fave is added
