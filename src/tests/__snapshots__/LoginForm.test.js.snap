@@ -2,8 +2,21 @@
 
 exports[`LoginForm should match the snapshot 1`] = `
 <form>
-  <input />
+  <h2>
+    Have an account?
+  </h2>
+  <input
+    className="email-login"
+    name="email"
+    onChange={[Function]}
+    placeholder="wes@anderson.com"
+    value=""
+  />
 </form>
 `;
 
-exports[`LoginForm state should match the snapshot 1`] = `Object {}`;
+exports[`LoginForm state should match the snapshot 1`] = `
+Object {
+  "email": "",
+}
+`;

@@ -7,8 +7,11 @@ exports[`App App Component should match the snapshot 1`] = `
   <header
     className="header-container"
   >
-    <div
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="logo"
+      to="/"
     >
       <img
         alt="An icon of Wes Anderson's face"
@@ -18,7 +21,7 @@ exports[`App App Component should match the snapshot 1`] = `
       <h1>
         WesTracker
       </h1>
-    </div>
+    </NavLink>
     <Nav />
   </header>
   <Route
@@ -27,6 +30,7 @@ exports[`App App Component should match the snapshot 1`] = `
     path="/"
   />
   <Route
+    component={[Function]}
     exact={true}
     path="/login"
   />
