@@ -26,7 +26,7 @@ export class LoginForm extends Component {
 
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>Have an account?</h2>
+        <h2>HAVE AN ACCOUNT?</h2>
         <div className="input-container">
           <input
             className="email-login"
@@ -48,14 +48,14 @@ export class LoginForm extends Component {
         <button
           className="submit-login"
           onClick={this.handleSubmit}
-        >Login
+        >LOGIN
         </button>
         <div className="sign-up-container">
-          <h3>Need an account?</h3>
+          <h3>NEED AN ACCOUNT?</h3>
           <button
             className="sign-up-btn"
           >
-          Sign Up
+          SIGN UP
           </button>
         </div>
       </form>

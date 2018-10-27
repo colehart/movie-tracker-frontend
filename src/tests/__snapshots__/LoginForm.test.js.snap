@@ -5,24 +5,46 @@ exports[`LoginForm should match the snapshot 1`] = `
   onSubmit={[Function]}
 >
   <h2>
-    Have an account?
+    HAVE AN ACCOUNT?
   </h2>
-  <input
-    className="email-login"
-    name="email"
-    onChange={[Function]}
-    placeholder="wes@anderson.com"
-    type="email"
-    value=""
-  />
-  <input
-    className="password-login"
-    name="password"
-    onChange={[Function]}
-    placeholder="Type password here"
-    type="password"
-    value=""
-  />
+  <div
+    className="input-container"
+  >
+    <input
+      className="email-login"
+      name="email"
+      onChange={[Function]}
+      placeholder="wes@anderson.com"
+      type="email"
+      value=""
+    />
+    <input
+      className="password-login"
+      name="password"
+      onChange={[Function]}
+      placeholder="Type password here"
+      type="password"
+      value=""
+    />
+  </div>
+  <button
+    className="submit-login"
+    onClick={[Function]}
+  >
+    LOGIN
+  </button>
+  <div
+    className="sign-up-container"
+  >
+    <h3>
+      NEED AN ACCOUNT?
+    </h3>
+    <button
+      className="sign-up-btn"
+    >
+      SIGN UP
+    </button>
+  </div>
 </form>
 `;
 
