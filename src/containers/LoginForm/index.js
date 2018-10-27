@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { addUser } from '../../actions';
 import * as API from '../../utils'
 import './LoginForm.css'
 
@@ -75,4 +77,8 @@ export class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export const mapDispatchToProps = (dispatch) => ({
+  addUser: (email, password, id) => dispatch(addUser(email, password, id))
+})
+
+export default connect(null, mapDispatchToProps)(LoginForm);

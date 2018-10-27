@@ -1,7 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { mockEmail, mockPassword, mockId } from './testMocks';
-import { LoginForm } from '../containers/LoginForm'
+import { LoginForm, mapDispatchToProps } from '../containers/LoginForm'
+import * as Actions from '../actions'
 
 describe('LoginForm', () => {
   describe('LoginFormComponent', () => {
@@ -88,7 +89,15 @@ describe('LoginForm', () => {
     })
   })
 
-  describe('mapStateToProps', () => {
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with the addUser action', () => {
+      const mockDispatch = jest.fn()
+      const expected = Actions.addUser(mockEmail, mockPassword, mockId)
 
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addUser(mockEmail, mockPassword, mockId)
+
+      expect(mockDispatch).toHaveBeenCalledWith(expected)
+    })
   })
 })
