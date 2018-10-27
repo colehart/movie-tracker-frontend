@@ -48,8 +48,7 @@ export class App extends Component {
             movie.id === parseInt(id, 10)))
           return (
             <MovieDetails {...movie} />
-            )
-          }} />
+          )}} />
       </div>
     );
   }
