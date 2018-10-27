@@ -58,4 +58,22 @@ describe('LoginForm', () => {
 
     expect(spy).toHaveBeenCalled()
   })
+
+  it('should call handleSignUp when sign up button is clicked', () => {
+    wrapper = mount(<LoginForm />)
+
+    const spy = spyOn(wrapper.instance(), 'handleSignUp')
+    const mockEvent = { preventDefault: jest.fn() }
+    wrapper.instance().forceUpdate()
+
+    wrapper.find('.sign-up-btn').simulate('click', mockEvent)
+
+    expect(spy).toHaveBeenCalled()
+  })
+
+  it('should hide login and display sign up when sign up button is clicked', () => {
+    wrapper = mount(<LoginForm />)
+
+    const spy = spyOn
+  })
 })

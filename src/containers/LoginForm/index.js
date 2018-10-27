@@ -18,7 +18,10 @@ export class LoginForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+  }
 
+  handleSignUp = (event) => {
+    event.preventDefault()
   }
 
   render() {
@@ -54,6 +57,7 @@ export class LoginForm extends Component {
           <h3>NEED AN ACCOUNT?</h3>
           <button
             className="sign-up-btn"
+            onClick={this.handleSignUp}
           >
           SIGN UP
           </button>
