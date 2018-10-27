@@ -42,6 +42,11 @@ export class LoginForm extends Component {
           onChange={this.handleInputChange}
           placeholder="Type password here"
         />
+        <button
+          className="submit-login"
+          onClick={this.handleSubmit}
+        >Login
+        </button>
       </form>
     )
   }

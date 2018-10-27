@@ -12,6 +12,7 @@ const Nav = () => {
         to="/favorites">
         <div className="fav-btn-nav">
           <span className="num-favs">0</span>
+        <p className="favorites-text">Favorites</p>
         </div>
       </NavLink>
       <NavLink to="/login" className="login-btn">
