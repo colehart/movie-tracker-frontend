@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm should match the snapshot 1`] = `
+exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
 <form
   onSubmit={[Function]}
 >
@@ -49,7 +49,7 @@ exports[`LoginForm should match the snapshot 1`] = `
 </form>
 `;
 
-exports[`LoginForm should toggle login when sign up button is clicked 1`] = `
+exports[`LoginForm LoginFormComponent should toggle login when sign up button is clicked 1`] = `
 <LoginForm>
   <form
     onSubmit={[Function]}
@@ -100,7 +100,7 @@ exports[`LoginForm should toggle login when sign up button is clicked 1`] = `
 </LoginForm>
 `;
 
-exports[`LoginForm state should match the snapshot 1`] = `
+exports[`LoginForm LoginFormComponent state should match the snapshot 1`] = `
 Object {
   "email": "",
   "isSigningUp": false,
