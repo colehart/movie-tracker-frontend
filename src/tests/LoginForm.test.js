@@ -5,20 +5,22 @@ import { LoginForm } from '../containers/LoginForm'
 describe('LoginForm', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<LoginForm />);
+    wrapper = mount(<LoginForm />);
   })
 
   it('should match the snapshot', () => {
+    wrapper = shallow(<LoginForm />)
+
     expect(wrapper).toMatchSnapshot()
   })
 
   it('state should match the snapshot', () => {
+    wrapper = shallow(<LoginForm />)
+
     expect(wrapper.state()).toMatchSnapshot()
   })
 
   it('should call handleInputChange when email input is changed', () => {
-    wrapper = mount(<LoginForm />)
-
     const spy = spyOn(wrapper.instance(), 'handleInputChange')
     wrapper.instance().forceUpdate()
     const mockEvent = { target: { value: 'something'} }
@@ -29,8 +31,6 @@ describe('LoginForm', () => {
   })
 
   it('should call handleInputChange when password input is changed', () => {
-    wrapper = mount(<LoginForm />)
-
     const spy = spyOn(wrapper.instance(), 'handleInputChange')
     wrapper.instance().forceUpdate()
     const mockEvent = { target: { value: 'something'} }
@@ -49,7 +49,6 @@ describe('LoginForm', () => {
   })
 
   it('calls handleSubmit onSubmit of the form', () => {
-    wrapper = mount(<LoginForm />)
     const spy = spyOn(wrapper.instance(), 'handleSubmit')
     const mockEvent = { preventDefault: jest.fn() }
     wrapper.instance().forceUpdate()
@@ -59,21 +58,30 @@ describe('LoginForm', () => {
     expect(spy).toHaveBeenCalled()
   })
 
-  it('should call handleSignUp when sign up button is clicked', () => {
-    wrapper = mount(<LoginForm />)
-
-    const spy = spyOn(wrapper.instance(), 'handleSignUp')
-    const mockEvent = { preventDefault: jest.fn() }
+  it('should call toggleSigningUp when sign up button is clicked', () => {
+    const spy = spyOn(wrapper.instance(), 'toggleSigningUp')
     wrapper.instance().forceUpdate()
 
-    wrapper.find('.sign-up-btn').simulate('click', mockEvent)
+    wrapper.find('.sign-up-btn').simulate('click')
 
     expect(spy).toHaveBeenCalled()
   })
 
-  it('should hide login and display sign up when sign up button is clicked', () => {
-    wrapper = mount(<LoginForm />)
+  it('should update state when toggleSigningUp is called', () => {
+    expect(wrapper.state('isSigningUp')).toBeFalsy()
 
-    const spy = spyOn
+    wrapper.instance().toggleSigningUp()
+
+    expect(wrapper.state('isSigningUp')).toBeTruthy()
+
+    wrapper.instance().toggleSigningUp()
+
+    expect(wrapper.state('isSigningUp')).toBeFalsy()
+  })
+
+  it('should toggle login when sign up button is clicked', () => {
+    wrapper.instance().toggleSigningUp()
+
+    expect(wrapper).toMatchSnapshot()
   })
 })

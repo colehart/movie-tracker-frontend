@@ -79,3 +79,7 @@ button:focus {
   border-color: #ffffff;
   background-color: transparent;
 }
+
+.hidden {
+  display: none;
+}

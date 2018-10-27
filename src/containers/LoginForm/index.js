@@ -7,7 +7,8 @@ export class LoginForm extends Component {
     super()
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      isSigningUp: false
     }
   }
 
@@ -20,16 +21,18 @@ export class LoginForm extends Component {
     event.preventDefault()
   }
 
-  handleSignUp = (event) => {
-    event.preventDefault()
+  toggleSigningUp = () => {
+    this.setState({isSigningUp: !this.state.isSigningUp})
   }
 
   render() {
-    const { email, password } = this.state
+    const { isSigningUp, email, password } = this.state
 
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>HAVE AN ACCOUNT?</h2>
+        <h2>
+          { isSigningUp ? 'ENLIST IN TEAM ZISSOU' : 'HAVE AN ACCOUNT?' }
+        </h2>
         <div className="input-container">
           <input
             className="email-login"
@@ -37,7 +40,9 @@ export class LoginForm extends Component {
             name="email"
             value={email}
             onChange={this.handleInputChange}
-            placeholder="wes@anderson.com"
+            placeholder= {
+              isSigningUp ? 'klaus@daimler.net' : "wes@anderson.com"
+            }
           />
           <input
             className="password-login"
@@ -51,15 +56,18 @@ export class LoginForm extends Component {
         <button
           className="submit-login"
           onClick={this.handleSubmit}
-        >LOGIN
+        >
+          { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
         </button>
         <div className="sign-up-container">
-          <h3>NEED AN ACCOUNT?</h3>
+          <h3>
+            { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }
+          </h3>
           <button
             className="sign-up-btn"
-            onClick={this.handleSignUp}
+            onClick={this.toggleSigningUp}
           >
-          SIGN UP
+            { isSigningUp ? 'CANCEL SIGN UP' : 'SIGN UP' }
           </button>
         </div>
       </form>
