@@ -22,7 +22,9 @@ exports[`App App Component should match the snapshot 1`] = `
         WesTracker
       </h1>
     </NavLink>
-    <Nav />
+    <Nav
+      userLoggedIn={false}
+    />
   </header>
   <Route
     component={[Function]}

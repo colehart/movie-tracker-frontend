@@ -19,6 +19,7 @@ export class App extends Component {
   }
 
   render() {
+    const { user } = this.props
     return (
       <div className="App">
         <header className="header-container">
@@ -30,7 +31,7 @@ export class App extends Component {
             />
             <h1>WesTracker</h1>
           </NavLink>
-          <Nav />
+          <Nav userLoggedIn={user ? true : false} />
         </header>
         <Route
           exact path='/'

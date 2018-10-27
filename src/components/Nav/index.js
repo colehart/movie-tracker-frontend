@@ -4,7 +4,7 @@ import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import userIcon from '../../assets/images/margot.png'
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className="nav-container">
       <NavLink
@@ -19,7 +19,9 @@ const Nav = () => {
         <img
           className="login-icon"
           src={ userIcon } />
-        <p className="login-text">LOGIN</p>
+        <p className="login-text">
+          {props.userLoggedIn ? 'LOGOUT' : 'LOGIN'}
+        </p>
       </NavLink>
     </nav>
   )
