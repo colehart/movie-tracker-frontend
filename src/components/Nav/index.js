@@ -15,10 +15,10 @@ const Nav = () => {
         </div>
       </NavLink>
       <NavLink to="/login" className="login-btn">
-          <img
-            className="login-icon"
-            src={ userIcon } />
-          <p className="login-text">Login</p>
+        <img
+          className="login-icon"
+          src={ userIcon } />
+        <p className="login-text">Login</p>
       </NavLink>
     </nav>
   )
