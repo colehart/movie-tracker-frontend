@@ -1,0 +1,14 @@
+.movie-container {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 40px auto;
+}
+
+/*.movie-container::after {
+  content: "";
+  flex: auto;
+}*/

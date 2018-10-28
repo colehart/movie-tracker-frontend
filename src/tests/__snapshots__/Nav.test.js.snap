@@ -7,17 +7,22 @@ exports[`Nav should match the snapshot 1`] = `
   <NavLink
     activeClassName="active"
     aria-current="page"
-    className="nav-link"
+    className="fav-btn-group"
     to="/favorites"
   >
     <div
-      className="fav-btn"
+      className="fav-btn-nav"
     >
       <span
         className="num-favs"
       >
         0
       </span>
+      <p
+        className="favorites-text"
+      >
+        FAVORITES
+      </p>
     </div>
   </NavLink>
   <NavLink
@@ -33,7 +38,51 @@ exports[`Nav should match the snapshot 1`] = `
     <p
       className="login-text"
     >
-      Login
+      LOGIN
+    </p>
+  </NavLink>
+</nav>
+`;
+
+exports[`Nav should toggle login text depending on user login status 1`] = `
+<nav
+  className="nav-container"
+>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="fav-btn-group"
+    to="/favorites"
+  >
+    <div
+      className="fav-btn-nav"
+    >
+      <span
+        className="num-favs"
+      >
+        0
+      </span>
+      <p
+        className="favorites-text"
+      >
+        FAVORITES
+      </p>
+    </div>
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="login-btn"
+    to="/login"
+  >
+    <img
+      className="login-icon"
+      src="margot.png"
+    />
+    <p
+      className="login-text"
+    >
+      LOGOUT
     </p>
   </NavLink>
 </nav>

@@ -18,3 +18,13 @@ export const mockMovies = [
     isFavorite: false
   }
 ]
+
+export const mockEmail = 'wes@anderson.com'
+export const mockPassword = 'password'
+export const mockId = 1
+
+export const mockUser = {
+  id: mockId,
+  email: mockEmail,
+  password: mockPassword
+}

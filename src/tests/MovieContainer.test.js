@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { MovieContainer } from '../components/MovieContainer';
+import { MovieContainer } from '../containers/MovieContainer';
 import { mockMovies } from './testMocks';
 
 describe('MovieContainer', () => {

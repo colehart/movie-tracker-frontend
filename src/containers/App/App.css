@@ -5,7 +5,6 @@
 }
 
 .App {
-  background-color: #70929C;
   font-family: "Futura", sans-serif;
   letter-spacing: 0.5px;
   box-sizing: border-box;
@@ -15,15 +14,17 @@
 .header-container {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  padding: 0 7% 20px 0;
-  height: 110px;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  height: 120px;
   background-color: #48788C;
-  box-shadow: 1px 1px 10px 4px #0000004f;
+  box-shadow: 1px 1px 10px 4px #4c6c7c;
 }
 
 .logo {
+  width: 400px;
   display: flex;
+  justify-content: space-around;
   align-items: flex-end;
   font-size: 3rem;
   font-weight: 700;

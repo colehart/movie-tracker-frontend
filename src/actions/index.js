@@ -8,12 +8,12 @@ export const addMovies = (movies) => ({
 //   id
 // })
 
-// export const addUser = (email, password, id) => ({
-//   type: 'ADD_USER',
-//   email,
-//   password,
-//   id
-// })
+export const addUser = (email, password, id) => ({
+  type: 'ADD_USER',
+  email,
+  password,
+  id
+})
 
 // export const validateUser = (email, password, id) => ({
 //   type: 'VALIDATE_USER',

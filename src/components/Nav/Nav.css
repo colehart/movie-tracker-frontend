@@ -1,19 +1,42 @@
 .nav-container {
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
+  width: 200px;
+  font-size: 1.25rem;
 }
 
-.nav-link {
-  text-decoration: none;
+.fav-btn-group {
+  /*text should be display: none until :hover, then CSS transition ease in above the respective icon;*/
+}
+
+.fav-btn-nav {
+  height: 50px;
+  width: 50px;
+  background-image: url('../../assets/images/hatFull-red.svg');
+  background-size: cover;
+}
+
+.num-favs {
+  position: relative;
+  top: 5px;
+  left: 25px;
 }
 
 .login-btn {
+  width: 100px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
 .login-icon {
-  height: 40px;
+  height: 50px;
   background-image: url('../../assets/images/margot.png');
   background-size: cover;
+}
+
+a {
+  color: #D4A931;
+  text-decoration: none;
 }

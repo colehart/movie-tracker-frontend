@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h2>
+    HAVE AN ACCOUNT?
+  </h2>
+  <div
+    className="input-container"
+  >
+    <input
+      className="email-login"
+      name="email"
+      onChange={[Function]}
+      placeholder="wes@anderson.com"
+      type="email"
+      value=""
+    />
+    <input
+      className="password-login"
+      name="password"
+      onChange={[Function]}
+      placeholder="Type password here"
+      type="password"
+      value=""
+    />
+  </div>
+  <button
+    className="submit-login"
+    onClick={[Function]}
+  >
+    LOGIN
+  </button>
+  <div
+    className="sign-up-container"
+  >
+    <h3>
+      NEED AN ACCOUNT?
+    </h3>
+    <button
+      className="sign-up-btn"
+      onClick={[Function]}
+    >
+      SIGN UP
+    </button>
+  </div>
+</form>
+`;
+
+exports[`LoginForm LoginFormComponent should toggle login when sign up button is clicked 1`] = `
+<LoginForm
+  addUser={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <h2>
+      HAVE AN ACCOUNT?
+    </h2>
+    <div
+      className="input-container"
+    >
+      <input
+        className="email-login"
+        name="email"
+        onChange={[Function]}
+        placeholder="wes@anderson.com"
+        type="email"
+        value=""
+      />
+      <input
+        className="password-login"
+        name="password"
+        onChange={[Function]}
+        placeholder="Type password here"
+        type="password"
+        value=""
+      />
+    </div>
+    <button
+      className="submit-login"
+      onClick={[Function]}
+    >
+      LOGIN
+    </button>
+    <div
+      className="sign-up-container"
+    >
+      <h3>
+        NEED AN ACCOUNT?
+      </h3>
+      <button
+        className="sign-up-btn"
+        onClick={[Function]}
+      >
+        SIGN UP
+      </button>
+    </div>
+  </form>
+</LoginForm>
+`;
+
+exports[`LoginForm LoginFormComponent state should match the snapshot 1`] = `
+Object {
+  "email": "",
+  "isSigningUp": false,
+  "password": "",
+}
+`;

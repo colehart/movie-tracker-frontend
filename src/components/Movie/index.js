@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
-import fullHat from '../../assets/images/hatFull.svg'
-import emptyHat from '../../assets/images/hatOutline.svg'
+import fullHat from '../../assets/images/hatFull-red.svg'
+import emptyHat from '../../assets/images/hatOutline-blue.svg'
 
 const Movie = ( { poster_path } ) => {
   return (
