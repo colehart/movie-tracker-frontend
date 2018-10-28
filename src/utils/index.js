@@ -33,6 +33,9 @@ export const addUser = async (user) => {
       'Content-Type': 'application/json'
     }
   })
+  if(!response.ok) {
+    throw new Error(response.error)
+  }
   const result = await response.json();
   console.log(result)
 }

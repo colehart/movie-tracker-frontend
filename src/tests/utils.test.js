@@ -54,7 +54,14 @@ describe('API', () => {
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     })
 
-    it('sets an error when the fetch fails', () => {
+    it('sets an error when the fetch fails', async () => {
+      const expected = Error('bad email')
+
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ok:false}))
+
+      const result = await API.addUser(mockNewUser)
+
+      await expect(result).rejects.toEqual(expected)
     })
 
   })
