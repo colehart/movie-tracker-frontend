@@ -30,3 +30,26 @@ export const mockUser = {
   email: mockEmail,
   password: mockPassword
 }
+
+export const mockAPIFilms = {
+        results: [
+          {
+            votes: 2,
+            backdrop_path: "backdrop-path1.jpg",
+            id: 1,
+            overview: "Great film.",
+            poster_path: "poster-path1.jpg",
+            release_date: "2014-02-26",
+            title: "The Grand Budapest Hotel"
+          },
+          {
+            votes: 15,
+            backdrop_path: "backdrop-path2.jpg",
+            id: 2,
+            overview: "Real good film.",
+            poster_path: "poster-path2.jpg",
+            release_date: "2015-03-27",
+            title: "The Life Aquatic with Steve Zissou"
+          }
+        ]
+      }

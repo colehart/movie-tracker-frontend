@@ -15,7 +15,7 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
       name="name"
       onChange={[Function]}
       placeholder="Klaus"
-      value="nodejs"
+      value=""
     />
     <input
       className="email-login"
@@ -74,7 +74,7 @@ exports[`LoginForm LoginFormComponent should toggle login when sign up button is
         name="name"
         onChange={[Function]}
         placeholder="Klaus"
-        value="nodejs"
+        value=""
       />
       <input
         className="email-login"
