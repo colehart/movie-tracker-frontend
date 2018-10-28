@@ -1,11 +1,14 @@
 export const userReducer = (state = {}, action) => {
   switch(action.type) {
     case 'ADD_USER':
-      return { email: action.email, password: action.password, id: action.id, userFaves: [] }
-
-    // case 'VALIDATE_USER':
-    //   return [...state, {email: action.email, password: action.password, id: action.id}]
-
+      return { 
+        name: action.name, 
+        email: action.email, 
+        password: action.password, 
+        id: action.id, 
+        userFaves: [] 
+      }
+      
     default:
       return state
   }

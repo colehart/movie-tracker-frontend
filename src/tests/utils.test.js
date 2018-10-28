@@ -1,38 +1,16 @@
 import * as API from '../utils';
+import { mockAPIFilms, mockMovies, mockPostParams, mockNewUser, mockPostResponse } from './testMocks'
 
 describe('API', () => {
   describe('fetchMovies', () => {
     let apiKey;
-    let mockFilms;
 
     beforeEach(() => {
       apiKey = 1
-      mockFilms = {
-        results: [
-          {
-            votes: 2,
-            backdrop_path: "backdrop-path1.jpg",
-            id: 1,
-            overview: "Great film.",
-            poster_path: "poster-path1.jpg",
-            release_date: "2014-02-26",
-            title: "The Grand Budapest Hotel"
-          },
-          {
-            votes: 15,
-            backdrop_path: "backdrop-path2.jpg",
-            id: 2,
-            overview: "Real good film.",
-            poster_path: "poster-path2.jpg",
-            release_date: "2015-03-27",
-            title: "The Life Aquatic with Steve Zissou"
-          }
-        ]
-      }
 
       window.fetch = jest.fn(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockFilms)
+        json: () => Promise.resolve(mockAPIFilms)
       }))
     })
 
@@ -46,26 +24,7 @@ describe('API', () => {
 
     it('should return clean movies if status is ok', async () => {
       const result = await API.fetchMovies(apiKey)
-      const expected = [
-        {
-          backdrop_path: "backdrop-path1.jpg",
-          id: 1,
-          overview: "Great film.",
-          poster_path: "poster-path1.jpg",
-          release_date: "2014-02-26",
-          title: "The Grand Budapest Hotel",
-          isFavorite: false
-        },
-        {
-          backdrop_path: "backdrop-path2.jpg",
-          id: 2,
-          overview: "Real good film.",
-          poster_path: "poster-path2.jpg",
-          release_date: "2015-03-27",
-          title: "The Life Aquatic with Steve Zissou",
-          isFavorite: false
-        }
-      ]
+      const expected = mockMovies
 
       expect(result).toEqual(expected)
     })
@@ -77,5 +36,33 @@ describe('API', () => {
 
       expect(API.fetchMovies()).rejects.toEqual(expected)
     })
+  })
+
+  describe('addUser', () => {
+
+
+    beforeEach(() => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve(mockPostResponse)
+      }))
+    })
+
+    it('calls fetch with the correct params', async () => {
+      const expected = mockPostParams
+      await API.addUser(mockNewUser)
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    })
+
+    it('sets an error when the fetch fails', async () => {
+      const expected = Error('bad email')
+
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ok:false}))
+
+      const result = await API.addUser(mockNewUser)
+
+      await expect(result).rejects.toEqual(expected)
+    })
+
   })
 })

@@ -8,8 +8,9 @@ export const addMovies = (movies) => ({
 //   id
 // })
 
-export const addUser = (email, password, id) => ({
+export const addUser = (name, email, password, id) => ({
   type: 'ADD_USER',
+  name,
   email,
   password,
   id

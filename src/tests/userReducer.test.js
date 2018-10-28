@@ -1,13 +1,15 @@
 import { userReducer } from '../reducers/userReducer';
 import * as Actions from '../actions'
-import { mockEmail, mockPassword, mockId } from './testMocks'
+import { mockName, mockEmail, mockPassword, mockId } from './testMocks'
 
 describe('userReducer', () => {
+  let name
   let email;
   let password;
   let id;
 
   beforeEach(() => {
+    name = mockName;
     email = mockEmail;
     password = mockPassword;
     id = mockId;

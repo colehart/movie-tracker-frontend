@@ -74,18 +74,21 @@ describe('LoginForm', () => {
 
     it('should update state when toggleSigningUp is called', () => {
       expect(wrapper.state('isSigningUp')).toBeFalsy()
+      const mockEvent = { preventDefault: jest.fn() }
 
-      wrapper.instance().toggleSigningUp()
+      wrapper.instance().toggleSigningUp(mockEvent)
 
       expect(wrapper.state('isSigningUp')).toBeTruthy()
 
-      wrapper.instance().toggleSigningUp()
+      wrapper.instance().toggleSigningUp(mockEvent)
 
       expect(wrapper.state('isSigningUp')).toBeFalsy()
     })
 
     it('should toggle login when sign up button is clicked', () => {
-      wrapper.instance().toggleSigningUp()
+      const mockEvent = { preventDefault: jest.fn() }
+
+      wrapper.instance().toggleSigningUp(mockEvent)
 
       expect(wrapper).toMatchSnapshot()
     })

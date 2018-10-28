@@ -1,5 +1,5 @@
 import * as Actions from '../actions';
-import { mockMovies, mockEmail, mockPassword, mockId } from './testMocks';
+import { mockName, mockMovies, mockEmail, mockPassword, mockId } from './testMocks';
 
 describe('actions', () => {
   it('should have a type of ADD_MOVIES', () => {
@@ -14,18 +14,20 @@ describe('actions', () => {
   })
 
   it('should have a type of ADD_USER', () => {
+    const name = mockName;
     const email = mockEmail;
     const password = mockPassword;
     const id = mockId;
 
     const expectedAction = {
       type: 'ADD_USER',
+      name,
       email,
       password,
       id,
     }
 
-    const result = Actions.addUser(email, password, id)
+    const result = Actions.addUser(name, email, password, id)
 
     expect(result).toEqual(expectedAction)
   })
