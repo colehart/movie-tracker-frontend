@@ -1,5 +1,5 @@
 import * as API from '../utils';
-import { mockAPIFilms, mockMovies } from './testMocks'
+import { mockAPIFilms, mockMovies, mockPostParams, mockNewUser, mockPostResponse } from './testMocks'
 
 describe('API', () => {
   describe('fetchMovies', () => {
@@ -41,8 +41,21 @@ describe('API', () => {
   describe('addUser', () => {
 
 
-    // beforeEach
-    it()
+    beforeEach(() => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve(mockPostResponse)
+      }))
+    })
+
+    it('calls fetch with the correct params', async () => {
+      const expected = mockPostParams
+      await API.addUser(mockNewUser)
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    })
+
+    it('sets an error when the fetch fails', () => {
+    })
 
   })
 })
