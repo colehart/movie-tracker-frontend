@@ -19,12 +19,14 @@ export const mockMovies = [
   }
 ]
 
+export const mockName = 'Wes'
 export const mockEmail = 'wes@anderson.com'
 export const mockPassword = 'password'
 export const mockId = 1
 
 export const mockUser = {
   id: mockId,
+  name: mockName,
   email: mockEmail,
   password: mockPassword
 }

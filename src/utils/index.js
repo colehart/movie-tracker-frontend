@@ -23,3 +23,7 @@ const cleanMovies = (results) => {
     }
   })
 }
+
+export const addUser = async (user) => {
+  const dataBaseAPI = 'localhost:3000'
+}

@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addUser } from '../../actions';
-import * as API from '../../utils'
-import './LoginForm.css'
+import * as API from '../../utils';
+import './LoginForm.css';
+import { uuid } from 'uuid/v4';
 
 export class LoginForm extends Component {
   constructor() {
     super()
     this.state = {
+      name: '',
       email: '',
       password: '',
       isSigningUp: false
@@ -20,8 +22,16 @@ export class LoginForm extends Component {
     this.setState({[name]: value})
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault()
+    const user = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      id: uuid
+    }
+    const result = await API.addUser(user);
+
   }
 
   toggleSigningUp = () => {
@@ -32,11 +42,18 @@ export class LoginForm extends Component {
     const { isSigningUp, email, password } = this.state
 
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={ this.handleSubmit }>
         <h2>
           { isSigningUp ? 'ENLIST IN TEAM ZISSOU' : 'HAVE AN ACCOUNT?' }
         </h2>
         <div className="input-container">
+           <input
+            className={ isSigningUp ? "name-login" : "hidden" }
+            name="name"
+            value={name}
+            onChange={ this.handleInputChange }
+            placeholder='Klaus'
+          />
           <input
             className="email-login"
             type="email"
@@ -79,7 +96,7 @@ export class LoginForm extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  addUser: (email, password, id) => dispatch(addUser(email, password, id))
+  addUser: (name, email, password, id) => dispatch(addUser(name, email, password, id))
 })
 
 LoginForm.propTypes = {

@@ -78,4 +78,10 @@ describe('API', () => {
       expect(API.fetchMovies()).rejects.toEqual(expected)
     })
   })
+
+  describe('addUser', () => {
+
+    it()
+
+  })
 })
