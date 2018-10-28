@@ -25,5 +25,14 @@ const cleanMovies = (results) => {
 }
 
 export const addUser = async (user) => {
-  const dataBaseAPI = 'localhost:3000'
+  const dataBaseAPI = 'http://localhost:3000/api/users/new';
+  const response = await fetch(dataBaseAPI, {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  const result = await response.json();
+  console.log(result)
 }

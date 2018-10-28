@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { addUser } from '../../actions';
 import * as API from '../../utils';
 import './LoginForm.css';
-import { uuid } from 'uuid/v4';
 
 export class LoginForm extends Component {
   constructor() {
@@ -28,18 +27,18 @@ export class LoginForm extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      id: uuid
     }
     const result = await API.addUser(user);
 
   }
 
-  toggleSigningUp = () => {
+  toggleSigningUp = (event ) => {
+    event.preventDefault()
     this.setState({isSigningUp: !this.state.isSigningUp})
   }
 
   render() {
-    const { isSigningUp, email, password } = this.state
+    const { name, isSigningUp, email, password } = this.state
 
     return(
       <form onSubmit={ this.handleSubmit }>
