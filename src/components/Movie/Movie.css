@@ -13,7 +13,6 @@
 }
 
 /*favorite container should be display: none / hidden until user hovers over it. Once movie is clicked/ isFavorite, display should be show*/
-
 .fav-container {
   display: flex;
   align-items: center;

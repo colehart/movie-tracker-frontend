@@ -1,13 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Movie should match the snapshot 1`] = `
-<div
-  className="movie"
->
-  <img
-    className="poster"
-    src="http://image.tmdb.org/t/p/w342//something.jpg"
-  />
+<div>
+  <Link
+    replace={false}
+    to="/movie/undefined"
+  >
+    <div
+      className="movie"
+    >
+      <div
+        className="movie-poster"
+      >
+        <img
+          className="poster"
+          src="http://image.tmdb.org/t/p/w342//something.jpg"
+        />
+      </div>
+    </div>
+  </Link>
   <div
     className="fav-container"
   >

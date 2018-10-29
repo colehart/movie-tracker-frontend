@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Movie = ( { poster_path, id } ) => {
   return (
     <div>
-      <Link to={`/${id}`}>
+      <Link to={`/movie/${id}`}>
         <div className='movie'>
           <div className='movie-poster'>
             <img

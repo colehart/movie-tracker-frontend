@@ -94,11 +94,22 @@ describe('LoginForm', () => {
     })
 
     it('should call addUser if isSigningUp', () => {
+      const mockEvent = { preventDefault: jest.fn() }
+      const spy = spyOn(wrapper.instance(), "createNewUser")
 
+      wrapper.instance().setState({ isSigningUp: true })
+      wrapper.instance().handleSubmit(mockEvent);
+
+      expect(spy).toHaveBeenCalled();
     })
 
     it('should call loginUser if not isSigningUp', () => {
+      const mockEvent = { preventDefault: jest.fn() }
+      const spy = spyOn(wrapper.instance(), "loginUser")
 
+      wrapper.instance().handleSubmit(mockEvent);
+
+      expect(spy).toHaveBeenCalled();
     })
   })
 

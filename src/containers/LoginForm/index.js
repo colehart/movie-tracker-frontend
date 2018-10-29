@@ -23,13 +23,28 @@ export class LoginForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault()
+    if (this.state.isSigningUp) {
+      const result = this.createNewUser()
+    } else {
+      const result = this.loginUser();
+    }
+  }
+
+  createNewUser = async () => {
     const user = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
     }
-    const result = await API.addUser(user);
+    return await API.addUser(user);
+  }
 
+  loginUser = async () => {
+    const user = {
+      email: this.state.email,
+      password: this.state.password,
+    }
+    return await API.loginUser(user)
   }
 
   toggleSigningUp = (event ) => {
