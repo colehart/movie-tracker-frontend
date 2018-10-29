@@ -8,6 +8,11 @@ export const userReducer = (state = {}, action) => {
         id: action.id, 
         userFaves: [] 
       }
+    case 'LOGIN_USER':
+      return {
+        email: action.email,
+        password: action.password
+      }
       
     default:
       return state

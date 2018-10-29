@@ -32,3 +32,18 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction)
   })
 })
+
+it('should have a type of LOGIN_USER', () => {
+    const email = mockEmail;
+    const password = mockPassword;
+
+    const expectedAction = {
+      type: 'LOGIN_USER',
+      email,
+      password,
+    }
+
+    const result = Actions.loginUser(email, password)
+
+    expect(result).toEqual(expectedAction)
+  })

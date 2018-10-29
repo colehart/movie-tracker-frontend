@@ -16,12 +16,11 @@ export const addUser = (name, email, password, id) => ({
   id
 })
 
-// export const validateUser = (email, password, id) => ({
-//   type: 'VALIDATE_USER',
-//   email,
-//   password,
-//   id
-// })
+export const loginUser = (email, password) => ({
+  type: 'LOGIN_USER',
+  email,
+  password,
+})
 
 // export const toggleUserLogin = (id) => ({
 //   type: 'TOGGLE_USER_LOGIN',
