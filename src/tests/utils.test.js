@@ -1,5 +1,5 @@
 import * as API from '../utils';
-import { mockAPIFilms, mockMovies, mockPostParams, mockNewUser, mockPostResponse } from './testMocks'
+import { mockAPIFilms, mockMovies, mockNewPostParams, mockNewUser, mockPostResponse, mockReturningUser, mockReturningPostParams } from './testMocks'
 
 describe('API', () => {
   describe('fetchMovies', () => {
@@ -47,7 +47,7 @@ describe('API', () => {
     })
 
     it('calls fetch with the correct params', async () => {
-      const expected = mockPostParams
+      const expected = mockNewPostParams
       await API.addUser(mockNewUser)
 
       expect(window.fetch).toHaveBeenCalledWith(...expected);
@@ -64,5 +64,31 @@ describe('API', () => {
       await expect(API.addUser(mockNewUser)).rejects.toEqual(expected)
     })
 
+  })
+  describe('loginUser', () => {
+    beforeEach(() => {
+      window.fetch = jest.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockPostResponse)
+      }))
+    })
+
+    it('calls fetch with the correct params', async () => {
+      const expected = mockReturningPostParams
+      await API.loginUser(mockReturningUser)
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    })
+
+    it('throws an error when the response is not ok', async () => {
+      const expected = Error('bad email')
+
+      window.fetch = jest.fn(() => Promise.resolve({
+        ok: false,
+        statusText: 'bad email'
+      }))
+
+      await expect(API.loginUser(mockReturningUser)).rejects.toEqual(expected)
+    })
   })
 })

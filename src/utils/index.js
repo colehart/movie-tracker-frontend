@@ -36,7 +36,23 @@ export const addUser = async (user) => {
   if (!response.ok) {
     throw new Error(response.statusText);
   } else {
-    const result = await response.json();
-    return result
+    return await response.json();
+  }
+}
+
+export const loginUser = async (user) => {
+  const dataBaseAPI = 'http://localhost:3000/api/users';
+  const email = user.email.toLowerCase();
+  const response = await fetch(dataBaseAPI, {
+    method: 'POST',
+    body: JSON.stringify({email, password: user.password}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  } else {
+    return await response.json();
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addUser } from '../../actions';
+import { addUser, loginUser } from '../../actions';
 import * as API from '../../utils';
 import './LoginForm.css';
 

@@ -60,7 +60,7 @@ export const mockNewUser = {
   password: mockPassword
 }
 
-export const mockPostParams = [
+export const mockNewPostParams = [
   'http://localhost:3000/api/users/new', {
     method: 'POST',
     body: JSON.stringify( mockNewUser ),
@@ -73,3 +73,18 @@ export const mockPostParams = [
 export const mockPostErrorResponse = {
   error: 'Key (email)=(email) already exists.'
 }
+
+export const mockReturningUser = {
+  email: mockEmail,
+  password: mockPassword
+}
+
+export const mockReturningPostParams = [
+  'http://localhost:3000/api/users', {
+    method: 'POST',
+    body: JSON.stringify( mockReturningUser ),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+]
