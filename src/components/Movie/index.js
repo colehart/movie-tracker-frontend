@@ -3,17 +3,24 @@ import PropTypes from 'prop-types';
 import './Movie.css';
 import fullHat from '../../assets/images/hatFull-red.svg'
 import emptyHat from '../../assets/images/hatOutline-blue.svg'
+import { Link } from 'react-router-dom';
 
-const Movie = ( { poster_path } ) => {
+const Movie = ( { poster_path, id } ) => {
   return (
-    <div className='movie'>
-      <img
-          className='poster'
-          src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
-      />
+    <div>
+      <Link to={`/${id}`}>
+        <div className='movie'>
+          <div className='movie-poster'>
+            <img
+              className='poster'
+              src={`http://image.tmdb.org/t/p/w342//${poster_path}`}/>
+          </div>
+        </div>
+      </Link>
       <div className='fav-container'>
         <p className='fav-text'>FAVORITE</p>
-        <div className='fav-btn'></div>
+        <div className='fav-btn'>
+        </div>
       </div>
     </div>
   )

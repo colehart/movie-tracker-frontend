@@ -25,5 +25,4 @@ MovieContainer.propTypes = {
   movies: PropTypes.array.isRequired
 }
 
-
 export default connect(mapStateToProps)(MovieContainer);

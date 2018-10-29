@@ -9,6 +9,7 @@ import { addMovies } from '../../actions';
 import MovieContainer from '../MovieContainer';
 import Nav from '../../components/Nav';
 import LoginForm from '../LoginForm'
+import MovieDetails from '../MovieDetails';
 import wesIcon from '../../assets/images/wes.png';
 import './App.css';
 
@@ -41,6 +42,13 @@ export class App extends Component {
           exact path='/login'
           component={ LoginForm }
         />
+        <Route exact path='/:id' render={({match}) => {
+          const { id } = match.params;
+          const movie = this.props.movies.find(movie => (
+            movie.id === parseInt(id, 10)))
+          return (
+            <MovieDetails {...movie} />
+          )}} />
       </div>
     );
   }
@@ -48,6 +56,7 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   user: state.user
+  movies: state.movies
 })
 
 export const mapDispatchToProps = (dispatch) => ({
