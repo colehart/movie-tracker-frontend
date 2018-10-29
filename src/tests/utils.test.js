@@ -39,10 +39,9 @@ describe('API', () => {
   })
 
   describe('addUser', () => {
-
-
     beforeEach(() => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      window.fetch = jest.fn(() => Promise.resolve({
+        ok: true,
         json: () => Promise.resolve(mockPostResponse)
       }))
     })
@@ -57,11 +56,12 @@ describe('API', () => {
     it('sets an error when the fetch fails', async () => {
       const expected = Error('bad email')
 
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ok:false}))
+      window.fetch = jest.fn(() => Promise.resolve({
+        ok: false,
+        statusText: 'bad email'
+      }))
 
-      const result = await API.addUser(mockNewUser)
-
-      await expect(result).rejects.toEqual(expected)
+      await expect(API.addUser(mockNewUser)).rejects.toEqual(expected)
     })
 
   })
