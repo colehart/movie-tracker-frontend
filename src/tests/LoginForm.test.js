@@ -85,12 +85,20 @@ describe('LoginForm', () => {
       expect(wrapper.state('isSigningUp')).toBeFalsy()
     })
 
-    it('should toggle login when sign up button is clicked', () => {
+    it('should toggle login view when sign up button is clicked', () => {
       const mockEvent = { preventDefault: jest.fn() }
 
       wrapper.instance().toggleSigningUp(mockEvent)
 
       expect(wrapper).toMatchSnapshot()
+    })
+
+    it('should call addUser if isSigningUp', () => {
+
+    })
+
+    it('should call loginUser if not isSigningUp', () => {
+
     })
   })
 

@@ -53,7 +53,7 @@ describe('API', () => {
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     })
 
-    it('sets an error when the fetch fails', async () => {
+    it('throws an error when the response is not ok', async () => {
       const expected = Error('bad email')
 
       window.fetch = jest.fn(() => Promise.resolve({
