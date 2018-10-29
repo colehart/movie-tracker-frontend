@@ -21,7 +21,7 @@ const cleanMovies = (results) => {
       title: movie.title,
       isFavorite: false
     }
-  })
+  })  
 }
 
 export const addUser = async (user) => {

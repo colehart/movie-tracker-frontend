@@ -13,37 +13,16 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction)
   })
 
-  it('should have a type of ADD_USER', () => {
-    const name = mockName;
-    const email = mockEmail;
-    const password = mockPassword;
+  it('should have a type of SET_USER', () => {
     const id = mockId;
 
     const expectedAction = {
-      type: 'ADD_USER',
-      name,
-      email,
-      password,
+      type: 'SET_USER',
       id,
     }
 
-    const result = Actions.addUser(name, email, password, id)
+    const result = Actions.setUser(id)
 
     expect(result).toEqual(expectedAction)
   })
 })
-
-it('should have a type of LOGIN_USER', () => {
-    const email = mockEmail;
-    const password = mockPassword;
-
-    const expectedAction = {
-      type: 'LOGIN_USER',
-      email,
-      password,
-    }
-
-    const result = Actions.loginUser(email, password)
-
-    expect(result).toEqual(expectedAction)
-  })

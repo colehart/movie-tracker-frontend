@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addUser, loginUser } from '../../actions';
+import { setUser } from '../../actions';
 import * as API from '../../utils';
 import './LoginForm.css';
 
@@ -24,10 +24,22 @@ export class LoginForm extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     if (this.state.isSigningUp) {
-      const result = this.createNewUser()
+      const result = await this.createNewUser()
+      this.props.setUser(result.id)
     } else {
-      const result = this.loginUser();
+      const result = await this.loginUser();
+      this.props.setUser(result.id)
     }
+    this.resetForm()
+  }
+
+  resetForm = () => {
+    this.setState({
+      name: '',
+      email: '',
+      password: '',
+      isSigningUp: false
+    })
   }
 
   createNewUser = async () => {
@@ -110,11 +122,11 @@ export class LoginForm extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  addUser: (name, email, password, id) => dispatch(addUser(name, email, password, id))
+  setUser: (id) => dispatch(setUser(id))
 })
 
 LoginForm.propTypes = {
-  addUser: PropTypes.func.isRequired
+  setUser: PropTypes.func.isRequired
 }
 
 export default connect(null, mapDispatchToProps)(LoginForm);

@@ -1,26 +1,27 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { mockEmail, mockPassword, mockId } from './testMocks';
+import { mockEmail, mockId } from './testMocks';
 import { LoginForm, mapDispatchToProps } from '../containers/LoginForm'
 import * as Actions from '../actions'
 
 describe('LoginForm', () => {
   describe('LoginFormComponent', () => {
     let wrapper;
-    let mockAddUser;
+    let mockSetUser;
+
     beforeEach(() => {
-      mockAddUser = jest.fn()
-      wrapper = mount(<LoginForm addUser={mockAddUser}/>);
+      mockSetUser = jest.fn()
+      wrapper = mount(<LoginForm setUser={mockSetUser}/>);
     })
 
     it('should match the snapshot', () => {
-      wrapper = shallow(<LoginForm addUser={mockAddUser}/>)
+      wrapper = shallow(<LoginForm setUser={mockSetUser}/>)
 
       expect(wrapper).toMatchSnapshot()
     })
 
     it('state should match the snapshot', () => {
-      wrapper = shallow(<LoginForm addUser={mockAddUser}/>)
+      wrapper = shallow(<LoginForm setUser={mockSetUser}/>)
 
       expect(wrapper.state()).toMatchSnapshot()
     })
@@ -49,7 +50,6 @@ describe('LoginForm', () => {
       const mockEvent = { target: { name: 'email', value: mockEmail} }
 
       wrapper.instance().handleInputChange(mockEvent)
-
       expect(wrapper.state('email')).toBe(mockEmail)
     })
 
@@ -116,10 +116,10 @@ describe('LoginForm', () => {
   describe('mapDispatchToProps', () => {
     it('should call dispatch with the addUser action', () => {
       const mockDispatch = jest.fn()
-      const expected = Actions.addUser(mockEmail, mockPassword, mockId)
+      const expected = Actions.setUser(mockId)
 
       const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.addUser(mockEmail, mockPassword, mockId)
+      mappedProps.setUser(mockId)
 
       expect(mockDispatch).toHaveBeenCalledWith(expected)
     })
