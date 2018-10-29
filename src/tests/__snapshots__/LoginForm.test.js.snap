@@ -56,7 +56,7 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
 </form>
 `;
 
-exports[`LoginForm LoginFormComponent should toggle login when sign up button is clicked 1`] = `
+exports[`LoginForm LoginFormComponent should toggle login view when sign up button is clicked 1`] = `
 <LoginForm
   addUser={[MockFunction]}
 >
