@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setUser } from '../../actions';
@@ -14,59 +13,59 @@ export class LoginForm extends Component {
       email: '',
       password: '',
       isSigningUp: false,
-      errorMessage: ''
+      errorMessage: '',
+      isDisabled: true
     }
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = async (event) => {
     const { name, value } = event.target;
+    await this.setState({[name]: value})
+    await this.toggleSubmit();
+  }
 
-    this.setState({[name]: value})
+  toggleSubmit = async () => {
+    const { isSigningUp, email, password, name } = this.state
+    if ( isSigningUp && name && email && password ) {
+      await this.setState({isDisabled: false})
+      return true
+    } else if (!isSigningUp && email && password) {
+      await this.setState({isDisabled: false})
+      return true
+    } else {
+      await this.setState({isDisabled: true})
+      return false
+    }
   }
 
   handleSubmit = async (event) => {
-    event.persist()
+    event.preventDefault()
     const { isSigningUp } = this.state;
 
     if (isSigningUp) {
       const result = await this.createNewUser()
 
-    console.log(result)
-      await this.checkResponse(isSigningUp, result, event)
+      this.checkForError(isSigningUp, result)
     } else {
       const result = await this.loginUser();
 
-    console.log(result)
-      await this.checkResponse(isSigningUp, result, event)
+      this.checkForError(isSigningUp, result)
     }
     this.resetForm()
+    this.toggleSubmit()
   }
 
-  checkResponse = (isSigningUp, result, event) => {
-    if (!this.validateUser()) {
-      this.setState({
-        errorMessage: 'Please fill out all fields'
-      })
-    } else if (isSigningUp && typeof result === 'object') {
+  checkForError = (isSigningUp, result) => {
+    if (isSigningUp && typeof result === 'object') {
       this.props.setUser(result.id)
+      this.props.history.push('/')
     } else if (!isSigningUp && typeof result === 'object') {
       this.props.setUser(result.data.id)
+      this.props.history.push('/')
     } else {
-      event.preventDefault()
       this.setState({
         errorMessage: result
       })
-    }
-  }
-
-  validateUser = () => {
-    const { isSigningUp, email, password, name } = this.state
-    if ( isSigningUp && name && email && password ) {
-      return true
-    } else if (!isSigningUp && email && password) {
-      return true
-    } else {
-      return false
     }
   }
 
@@ -102,12 +101,12 @@ export class LoginForm extends Component {
   }
 
   render() {
-    const { name, isSigningUp, email, password, errorMessage } = this.state
+    const { name, isSigningUp, email, password, errorMessage, isDisabled } = this.state
 
     return(
       <div>
         <div
-          className={errorMessage ? '' : 'hidden'}>
+          className={errorMessage ? 'error-message' : 'hidden'}>
           { errorMessage }
         </div>
         <form onSubmit={ this.handleSubmit }>
@@ -121,7 +120,6 @@ export class LoginForm extends Component {
               value={name}
               onChange={ this.handleInputChange }
               placeholder='Klaus'
-              isrequired='true'
             />
             <input
               className="email-login"
@@ -132,7 +130,6 @@ export class LoginForm extends Component {
               placeholder= {
                 isSigningUp ? 'klaus@daimler.net' : "wes@anderson.com"
               }
-              isrequired='true'
             />
             <input
               className="password-login"
@@ -141,16 +138,14 @@ export class LoginForm extends Component {
               value={password}
               onChange={this.handleInputChange}
               placeholder="Type password here"
-              isrequired='true'
             />
           </div>
-          <NavLink exact to={this.validateUser ? '/login' : '/' }>
-            <button
-              className="submit-login"
-              onClick={this.validateUser ? this.handleSubmit : ''}>
-              { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
-            </button>
-          </NavLink>
+          <button
+            className="submit-login"
+            disabled={isDisabled}
+            onClick={this.handleSubmit}>
+            { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
+          </button>          
           <div className="sign-up-container">
             <h3>
               { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }

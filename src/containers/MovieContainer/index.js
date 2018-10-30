@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 
 
 export const MovieContainer = (props) => {
+  if(!props.isLoggedIn) {
+    props.history.push('/login')
+  }
   const movies = props.movies.map(movie => {
     return <Movie { ...movie } key={movie.id} />
   })
@@ -18,7 +21,8 @@ export const MovieContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  movies: state.movies
+  movies: state.movies,
+  isLoggedIn: state.user.id,
 })
 
 MovieContainer.propTypes = {
