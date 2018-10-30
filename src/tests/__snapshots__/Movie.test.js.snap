@@ -13,6 +13,7 @@ exports[`Movie should match the snapshot 1`] = `
         className="movie-poster"
       >
         <img
+          alt="Click here for movie details."
           className="poster"
           src="http://image.tmdb.org/t/p/w342//something.jpg"
         />

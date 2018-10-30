@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -24,14 +24,14 @@ export class App extends Component {
     return (
       <div className="App">
         <header className="header-container">
-          <NavLink to='/' className="logo">
+          <Link to='/' className="logo">
             <img
               src={ wesIcon }
               className="logo-icon"
               alt="An icon of Wes Anderson's face"
             />
             <h1>WesTracker</h1>
-          </NavLink>
+          </Link>
           <Nav userLoggedIn={user.email ? true : false} />
         </header>
         <Route
@@ -42,7 +42,7 @@ export class App extends Component {
           exact path='/login'
           component={ LoginForm }
         />
-        <Route exact path='/movie/:id' render={({match}) => {
+        <Route path='/movie/:id' render={({match}) => {
           const { id } = match.params;
           const movie = this.props.movies.find(movie => (
             movie.id === parseInt(id, 10)))
@@ -68,4 +68,4 @@ App.propTypes = {
   addMovies: PropTypes.func.isRequired
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

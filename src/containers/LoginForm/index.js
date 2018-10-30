@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setUser } from '../../actions';
@@ -21,14 +22,13 @@ export class LoginForm extends Component {
     this.setState({[name]: value})
   }
 
-  handleSubmit = async (event) => {
-    event.preventDefault()
+  handleSubmit = async () => {
     if (this.state.isSigningUp) {
       const result = await this.createNewUser()
       this.props.setUser(result.id)
     } else {
       const result = await this.loginUser();
-      this.props.setUser(result.id)
+      this.props.setUser(result.data.id)
     }
     this.resetForm()
   }
@@ -59,7 +59,7 @@ export class LoginForm extends Component {
     return await API.loginUser(user)
   }
 
-  toggleSigningUp = (event ) => {
+  toggleSigningUp = (event) => {
     event.preventDefault()
     this.setState({isSigningUp: !this.state.isSigningUp})
   }
@@ -99,12 +99,13 @@ export class LoginForm extends Component {
             placeholder="Type password here"
           />
         </div>
-        <button
-          className="submit-login"
-          onClick={this.handleSubmit}
-        >
-          { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
-        </button>
+        <NavLink exact to='/'>
+          <button
+            className="submit-login"
+            onClick={this.handleSubmit}>
+            { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
+          </button>
+        </NavLink>
         <div className="sign-up-container">
           <h3>
             { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }

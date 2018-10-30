@@ -18,7 +18,8 @@ const Nav = (props) => {
       <NavLink to="/login" className="login-btn">
         <img
           className="login-icon"
-          src={ userIcon } />
+          src={ userIcon } 
+          alt='Click here to login'/>
         <p className="login-text">
           {props.userLoggedIn ? 'LOGOUT' : 'LOGIN'}
         </p>

@@ -13,7 +13,8 @@ const Movie = ( { poster_path, id } ) => {
           <div className='movie-poster'>
             <img
               className='poster'
-              src={`http://image.tmdb.org/t/p/w342//${poster_path}`}/>
+              src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
+              alt='Click here for movie details.'/>
           </div>
         </div>
       </Link>

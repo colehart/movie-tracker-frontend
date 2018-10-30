@@ -11,18 +11,14 @@ describe('LoginForm', () => {
 
     beforeEach(() => {
       mockSetUser = jest.fn()
-      wrapper = mount(<LoginForm setUser={mockSetUser}/>);
+      wrapper = shallow(<LoginForm setUser={mockSetUser}/>);
     })
 
     it('should match the snapshot', () => {
-      wrapper = shallow(<LoginForm setUser={mockSetUser}/>)
-
       expect(wrapper).toMatchSnapshot()
     })
 
     it('state should match the snapshot', () => {
-      wrapper = shallow(<LoginForm setUser={mockSetUser}/>)
-
       expect(wrapper.state()).toMatchSnapshot()
     })
 
@@ -55,10 +51,9 @@ describe('LoginForm', () => {
 
     it('calls handleSubmit onSubmit of the form', () => {
       const spy = spyOn(wrapper.instance(), 'handleSubmit')
-      const mockEvent = { preventDefault: jest.fn() }
       wrapper.instance().forceUpdate()
 
-      wrapper.find('form').simulate('submit', mockEvent)
+      wrapper.find('form').simulate('submit')
 
       expect(spy).toHaveBeenCalled()
     })
@@ -94,20 +89,18 @@ describe('LoginForm', () => {
     })
 
     it('should call addUser if isSigningUp', () => {
-      const mockEvent = { preventDefault: jest.fn() }
       const spy = spyOn(wrapper.instance(), "createNewUser")
 
       wrapper.instance().setState({ isSigningUp: true })
-      wrapper.instance().handleSubmit(mockEvent);
+      wrapper.instance().handleSubmit();
 
       expect(spy).toHaveBeenCalled();
     })
 
     it('should call loginUser if not isSigningUp', () => {
-      const mockEvent = { preventDefault: jest.fn() }
       const spy = spyOn(wrapper.instance(), "loginUser")
 
-      wrapper.instance().handleSubmit(mockEvent);
+      wrapper.instance().handleSubmit();
 
       expect(spy).toHaveBeenCalled();
     })
