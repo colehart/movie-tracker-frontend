@@ -23,17 +23,29 @@
   left: 25px;
 }
 
-.fav-text,
+.favorites-text,
 .login-text {
   color: #D4A931;
- }
+  visibility: hidden;
+}
 
- .slide {
+.active p {
   position: relative;
-  top: 15px;
+  bottom: 45px;
+  right: 50px;
   visibility: visible;
-  transition: ;
- }
+  transition: visibility 2s ease-in-out;
+}
+
+.active.login-text {
+  bottom: 45px;
+  right: 50px;
+}
+
+/*.active.favorites-text {
+  bottom: 60px;
+  right: 40px;
+}*/
 
 .login-btn {
   width: 100px;
