@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import FlashMessage from 'react-flash-message';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setUser } from '../../actions';
@@ -26,6 +25,7 @@ export class LoginForm extends Component {
   }
 
   handleSubmit = async (event) => {
+    event.persist()
     const { isSigningUp } = this.state;
 
     if (isSigningUp) {
@@ -35,7 +35,7 @@ export class LoginForm extends Component {
       await this.checkResponse(isSigningUp, result, event)
     } else {
       const result = await this.loginUser();
-      
+
     console.log(result)
       await this.checkResponse(isSigningUp, result, event)
     }
@@ -43,20 +43,30 @@ export class LoginForm extends Component {
   }
 
   checkResponse = (isSigningUp, result, event) => {
-    if (isSigningUp && typeof result === 'object') {
+    if (!this.validateUser()) {
+      this.setState({
+        errorMessage: 'Please fill out all fields'
+      })
+    } else if (isSigningUp && typeof result === 'object') {
       this.props.setUser(result.id)
     } else if (!isSigningUp && typeof result === 'object') {
       this.props.setUser(result.data.id)
-    } else if (isSigningUp){
-      event.preventDefault()
-      this.setState({
-        errorMessage: result
-      }) 
     } else {
       event.preventDefault()
       this.setState({
         errorMessage: result
-      }) 
+      })
+    }
+  }
+
+  validateUser = () => {
+    const { isSigningUp, email, password, name } = this.state
+    if ( isSigningUp && name && email && password ) {
+      return true
+    } else if (!isSigningUp && email && password) {
+      return true
+    } else {
+      return false
     }
   }
 
@@ -96,11 +106,10 @@ export class LoginForm extends Component {
 
     return(
       <div>
-        <FlashMessage 
-          duration={5000}
+        <div
           className={errorMessage ? '' : 'hidden'}>
           { errorMessage }
-        </FlashMessage>
+        </div>
         <form onSubmit={ this.handleSubmit }>
           <h2>
             { isSigningUp ? 'ENLIST IN TEAM ZISSOU' : 'HAVE AN ACCOUNT?' }
@@ -112,6 +121,7 @@ export class LoginForm extends Component {
               value={name}
               onChange={ this.handleInputChange }
               placeholder='Klaus'
+              isrequired='true'
             />
             <input
               className="email-login"
@@ -122,6 +132,7 @@ export class LoginForm extends Component {
               placeholder= {
                 isSigningUp ? 'klaus@daimler.net' : "wes@anderson.com"
               }
+              isrequired='true'
             />
             <input
               className="password-login"
@@ -130,12 +141,13 @@ export class LoginForm extends Component {
               value={password}
               onChange={this.handleInputChange}
               placeholder="Type password here"
+              isrequired='true'
             />
           </div>
-          <NavLink exact to='/'>
+          <NavLink exact to={this.validateUser ? '/login' : '/' }>
             <button
               className="submit-login"
-              onClick={this.handleSubmit}>
+              onClick={this.validateUser ? this.handleSubmit : ''}>
               { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
             </button>
           </NavLink>
