@@ -2,28 +2,28 @@
 
 exports[`App App Component should match the snapshot 1`] = `
 <div
-  className="App"
+  className="a-App"
 >
   <header
-    className="header-container"
+    className="a-header-container"
   >
     <Link
-      className="logo"
+      className="a-logo"
       replace={false}
       to="/"
     >
       <img
         alt="An icon of Wes Anderson's face"
-        className="logo-icon"
+        className="a-logo-icon"
         src="wes.png"
       />
-      <h1>
+      <h1
+        className="a-header-title"
+      >
         WesTracker
       </h1>
     </Link>
-    <Connect(Nav)
-      userLoggedIn={false}
-    />
+    <Connect(Nav) />
   </header>
   <Route
     component={[Function]}

@@ -6,9 +6,12 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
     className="hidden"
   />
   <form
+    className="lf-form"
     onSubmit={[Function]}
   >
-    <h2>
+    <h2
+      className="banner-text"
+    >
       HAVE AN ACCOUNT?
     </h2>
     <div
@@ -48,7 +51,9 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
     <div
       className="sign-up-container"
     >
-      <h3>
+      <h3
+        className="lower-banner-text"
+      >
         NEED AN ACCOUNT?
       </h3>
       <button
@@ -68,9 +73,12 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
     className="hidden"
   />
   <form
+    className="lf-form"
     onSubmit={[Function]}
   >
-    <h2>
+    <h2
+      className="banner-text"
+    >
       ENLIST IN TEAM ZISSOU
     </h2>
     <div
@@ -110,7 +118,9 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
     <div
       className="sign-up-container"
     >
-      <h3>
+      <h3
+        className="lower-banner-text"
+      >
         ERM, NVM...
       </h3>
       <button

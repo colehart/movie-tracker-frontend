@@ -88,19 +88,21 @@ describe('LoginForm', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('should call addUser if isSigningUp', () => {
+    it('should call addUser if isSigningUp', async () => {
       const spy = spyOn(wrapper.instance(), "createNewUser")
+      const mockEvent = { preventDefault: jest.fn() }
 
       wrapper.instance().setState({ isSigningUp: true })
-      wrapper.instance().handleSubmit();
+      await wrapper.instance().handleSubmit(mockEvent);
 
       expect(spy).toHaveBeenCalled();
     })
 
-    it('should call loginUser if not isSigningUp', () => {
+    it('should call loginUser if not isSigningUp', async () => {
       const spy = spyOn(wrapper.instance(), "loginUser")
+      const mockEvent = { preventDefault: jest.fn() }
 
-      wrapper.instance().handleSubmit();
+      await wrapper.instance().handleSubmit(mockEvent);
 
       expect(spy).toHaveBeenCalled();
     })

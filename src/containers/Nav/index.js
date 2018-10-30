@@ -11,8 +11,10 @@ export const Nav = (props) => {
 
   const handleHover = (event) => {
     if(!event.target.classList.contains('active')) {
+      console.log(event.target.classList)
       event.target.classList.add('active')
     } else {
+      console.log(event.target.classList)
       event.target.classList.remove('active')
     }
   }
@@ -79,7 +81,8 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 Nav.propTypes = {
-  userLoggedIn: PropTypes.bool.isRequired
+  removeUser: PropTypes.func.isRequired,
+  userLoggedIn: PropTypes.number
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should match the snapshot 1`] = `
+exports[`Nav Nav Component should match the snapshot 1`] = `
 <nav
   className="nav-container"
 >
@@ -68,7 +68,7 @@ exports[`Nav should match the snapshot 1`] = `
 </nav>
 `;
 
-exports[`Nav should toggle login text depending on user login status 1`] = `
+exports[`Nav Nav Component should toggle login text depending on user login status 1`] = `
 <nav
   className="nav-container"
 >

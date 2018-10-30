@@ -32,7 +32,7 @@ export class App extends Component {
             />
             <h1 className='a-header-title'>WesTracker</h1>
           </Link>
-          <Nav userLoggedIn={user.email ? true : false} />
+          <Nav />
         </header>
         <Route
           exact path='/'

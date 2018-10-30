@@ -2,28 +2,37 @@
 
 exports[`MovieDetails should match the snapshot 1`] = `
 <div
-  className="details-container"
+  className="d-container"
 >
-  <Link
-    className="back-btn"
-    replace={false}
-    to="/"
-  >
-    Back
-  </Link>
-  <img
-    alt="Poster of Wes Anderson's hit movie: \\"undefined\\""
-    src="http://image.tmdb.org/t/p/w342//undefined"
-  />
   <div
-    text-container={true}
+    className="d-btn-container"
   >
-    <h1
-      className="title"
+    <Link
+      className="d-back-btn"
+      replace={false}
+      to="/"
+    >
+      ← Back to Movies
+    </Link>
+  </div>
+  <div
+    className="d-content-container"
+  >
+    <img
+      alt="Poster of Wes Anderson's hit movie: \\"undefined\\""
+      className="d-poster"
+      src="http://image.tmdb.org/t/p/w342//undefined"
     />
-    <p
-      className="overview"
-    />
+    <div
+      className="d-text-container"
+    >
+      <h1
+        className="d-title"
+      />
+      <p
+        className="d-overview"
+      />
+    </div>
   </div>
 </div>
 `;

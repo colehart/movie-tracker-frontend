@@ -54,14 +54,12 @@ describe('API', () => {
     })
 
     it('throws an error when the response is not ok', async () => {
-      const expected = Error('bad email')
-
+      const expected = 'Email has already been used'
+      
       window.fetch = jest.fn(() => Promise.resolve({
         ok: false,
-        statusText: 'bad email'
       }))
-
-      await expect(API.addUser(mockNewUser)).rejects.toEqual(expected)
+      await expect(API.addUser(mockNewUser)).resolves.toEqual(expected)
     })
 
   })
@@ -81,14 +79,13 @@ describe('API', () => {
     })
 
     it('throws an error when the response is not ok', async () => {
-      const expected = Error('bad email')
+      const expected = 'Email and password do not match.'
 
       window.fetch = jest.fn(() => Promise.resolve({
         ok: false,
-        statusText: 'bad email'
       }))
 
-      await expect(API.loginUser(mockReturningUser)).rejects.toEqual(expected)
+      await expect(API.loginUser(mockReturningUser)).resolves.toEqual(expected)
     })
   })
 })
