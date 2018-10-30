@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setUser } from '../../actions';
@@ -22,45 +21,10 @@ export class LoginForm extends Component {
   handleInputChange = async (event) => {
     const { name, value } = event.target;
     await this.setState({[name]: value})
-    await this.validateUser();
+    await this.toggleSubmit();
   }
 
-  handleSubmit = async (event) => {
-    event.persist()
-    const { isSigningUp } = this.state;
-
-    if (isSigningUp) {
-      const result = await this.createNewUser()
-
-    console.log(result)
-      await this.checkResponse(isSigningUp, result, event)
-    } else {
-      const result = await this.loginUser();
-
-    console.log(result)
-      await this.checkResponse(isSigningUp, result, event)
-    }
-    this.resetForm()
-  }
-
-  checkResponse = (isSigningUp, result, event) => {
-    if (!this.validateUser()) {
-      this.setState({
-        errorMessage: 'Please fill out all fields'
-      })
-    } else if (isSigningUp && typeof result === 'object') {
-      this.props.setUser(result.id)
-    } else if (!isSigningUp && typeof result === 'object') {
-      this.props.setUser(result.data.id)
-    } else {
-      event.preventDefault()
-      this.setState({
-        errorMessage: result
-      })
-    }
-  }
-
-  validateUser = async () => {
+  toggleSubmit = async () => {
     const { isSigningUp, email, password, name } = this.state
     if ( isSigningUp && name && email && password ) {
       await this.setState({isDisabled: false})
@@ -71,6 +35,37 @@ export class LoginForm extends Component {
     } else {
       await this.setState({isDisabled: true})
       return false
+    }
+  }
+
+  handleSubmit = async (event) => {
+    event.preventDefault()
+    const { isSigningUp } = this.state;
+
+    if (isSigningUp) {
+      const result = await this.createNewUser()
+
+      this.checkForError(isSigningUp, result)
+    } else {
+      const result = await this.loginUser();
+
+      this.checkForError(isSigningUp, result)
+    }
+    this.resetForm()
+    this.toggleSubmit()
+  }
+
+  checkForError = (isSigningUp, result) => {
+    if (isSigningUp && typeof result === 'object') {
+      this.props.setUser(result.id)
+      this.props.history.push('/')
+    } else if (!isSigningUp && typeof result === 'object') {
+      this.props.setUser(result.data.id)
+      this.props.history.push('/')
+    } else {
+      this.setState({
+        errorMessage: result
+      })
     }
   }
 
@@ -99,8 +94,6 @@ export class LoginForm extends Component {
     }
     return await API.loginUser(user)
   }
-
-
 
   toggleSigningUp = (event) => {
     event.preventDefault()
@@ -147,14 +140,12 @@ export class LoginForm extends Component {
               placeholder="Type password here"
             />
           </div>
-          <NavLink exact to={this.validateUser ? '/' : '/login' }>
-            <button
-              className="submit-login"
-              disabled={isDisabled}
-              onClick={this.validateUser ? this.handleSubmit : ''}>
-              { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
-            </button>
-          </NavLink>
+          <button
+            className="submit-login"
+            disabled={isDisabled}
+            onClick={this.handleSubmit}>
+            { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
+          </button>          
           <div className="sign-up-container">
             <h3>
               { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }
