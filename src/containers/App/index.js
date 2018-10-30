@@ -22,15 +22,15 @@ export class App extends Component {
   render() {
     const { user } = this.props
     return (
-      <div className="App">
-        <header className="header-container">
-          <Link to='/' className="logo">
+      <div className="a-App">
+        <header className="a-header-container">
+          <Link to='/' className="a-logo">
             <img
               src={ wesIcon }
-              className="logo-icon"
+              className="a-logo-icon"
               alt="An icon of Wes Anderson's face"
             />
-            <h1>WesTracker</h1>
+            <h1 className='a-header-title'>WesTracker</h1>
           </Link>
           <Nav userLoggedIn={user.email ? true : false} />
         </header>

@@ -1,28 +1,38 @@
-.details-container {
+.d-container {
   width: 70%;
-  margin: auto;
-}
-
-.backdrop {
-  position: absolute;
-  height: 100vh;
-  z-index: -1;
-  background: 
-}
-
-.back-btn {
-
-}
-
-.text-container {
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
-}
-
-.title {
+  align-items: center;
 
 }
 
-.overview {
+.d-btn-container {
+  /*border: 2px solid red;*/
+  margin: 0 0 30px;
+}
+
+.d-back-btn {
+}
+
+.d-poster {
+  height: 400px;
+}
+
+.d-text-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 0 50px;
+}
+
+.d-content-container {
+  display: flex;
+}
+
+.d-title {
+
+}
+
+.d-overview {
 
 }
