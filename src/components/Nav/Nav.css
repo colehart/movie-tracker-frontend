@@ -23,6 +23,30 @@
   left: 25px;
 }
 
+.favorites-text,
+.login-text {
+  color: #D4A931;
+  visibility: hidden;
+}
+
+.active p {
+  position: relative;
+  bottom: 45px;
+  right: 50px;
+  visibility: visible;
+  transition: visibility 2s ease-in-out;
+}
+
+.active.login-text {
+  bottom: 45px;
+  right: 50px;
+}
+
+/*.active.favorites-text {
+  bottom: 60px;
+  right: 40px;
+}*/
+
 .login-btn {
   width: 100px;
   display: flex;
