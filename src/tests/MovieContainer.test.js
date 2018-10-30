@@ -8,7 +8,11 @@ describe('MovieContainer', () => {
     let wrapper;
 
     beforeEach(() => {
-      wrapper = shallow(<MovieContainer movies={ mockMovies }/>);
+      wrapper = shallow(<MovieContainer
+                          movies={ mockMovies }
+                          history={ [] }
+                          isLoggedIn={ undefined }
+                        />);
     })
 
     it('should match the snapshot', () => {
@@ -19,12 +23,23 @@ describe('MovieContainer', () => {
   describe('mapStateToProps', () => {
     it('should parse the movies from state', () => {
       const mockState = {
+        user: {},
         movies: mockMovies
       }
       const expected = mockMovies
       const mappedProps = mapStateToProps(mockState)
 
       expect(mappedProps.movies).toEqual(expected)
+    })
+
+    it('should set isLoggedIn from user id in state', () => {
+      const mockState = {
+        user: { id: 1 }
+      }
+      const expected = 1;
+      const mappedProps = mapStateToProps(mockState)
+
+      expect(mappedProps.isLoggedIn).toEqual(expected)
     })
   })
 })
