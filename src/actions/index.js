@@ -3,10 +3,10 @@ export const addMovies = (movies) => ({
   movies
 })
 
-// export const toggleFavorite = (id) => ({
-//   type: 'TOGGLE_FAVORITE',
-//   id
-// })
+export const toggleFavorite = (id) => ({
+  type: 'TOGGLE_FAVORITE',
+  id
+})
 
 export const setUser = (id) => ({
   type: 'SET_USER',

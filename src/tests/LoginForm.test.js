@@ -62,7 +62,7 @@ describe('LoginForm', () => {
       const spy = spyOn(wrapper.instance(), 'toggleSigningUp')
       wrapper.instance().forceUpdate()
 
-      wrapper.find('.sign-up-btn').simulate('click')
+      wrapper.find('.lf-sign-up-btn').simulate('click')
 
       expect(spy).toHaveBeenCalled()
     })

@@ -35,4 +35,16 @@ describe('actions', () => {
 
     expect(result).toEqual(expectedAction)
   })
+
+  it('should have a type of TOGGLE_FAVORITE', () => {
+    const id = mockId;
+    const expectedAction = {
+      type: 'TOGGLE_FAVORITE',
+      id
+    }
+
+    const result = Actions.toggleFavorite(id)
+
+    expect(result).toEqual(expectedAction)
+  })
 })

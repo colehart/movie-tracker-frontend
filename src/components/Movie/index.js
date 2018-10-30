@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
 import fullHat from '../../assets/images/hatFull-red.svg'
-import emptyHat from '../../assets/images/hatOutline-blue.svg'
+import emptyHat from '../../assets/images/hatOutline-blue.svg';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { dispatch } from 'redux';
 
-const Movie = ( { poster_path, id } ) => {
+export const Movie = (props) => {
+  const  { poster_path, id, isLoggedIn } = props;
   return (
     <div>
       <Link to={`/movie/${id}`}>
@@ -18,7 +21,9 @@ const Movie = ( { poster_path, id } ) => {
           </div>
         </div>
       </Link>
-      <div className='m-fav-container'>
+      <div className='m-fav-container' 
+      // onClick={!isLoggedIn ? props.location.push('/login') : ''}
+      >
         <p className='m-fav-text'>FAVORITE</p>
         <div className='m-fav-btn'>
         </div>
@@ -27,8 +32,16 @@ const Movie = ( { poster_path, id } ) => {
   )
 }
 
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.user.id
+})
+
+// const mapDispatchToProps = (dispatch) => ({
+
+// })
+
 Movie.propTypes = {
   poster_path: PropTypes.string.isRequired
 }
 
-export default Movie;
+export default connect(mapStateToProps)(Movie);

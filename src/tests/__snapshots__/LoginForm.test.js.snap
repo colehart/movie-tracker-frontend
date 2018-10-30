@@ -10,12 +10,12 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
     onSubmit={[Function]}
   >
     <h2
-      className="banner-text"
+      className="lf-banner-text"
     >
       HAVE AN ACCOUNT?
     </h2>
     <div
-      className="input-container"
+      className="lf-input-container"
     >
       <input
         className="hidden"
@@ -42,22 +42,22 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
       />
     </div>
     <button
-      className="submit-login"
+      className="lf-submit-login"
       disabled={true}
       onClick={[Function]}
     >
       LOGIN
     </button>
     <div
-      className="sign-up-container"
+      className="lf-sign-up-container"
     >
       <h3
-        className="lower-banner-text"
+        className="lf-lower-banner-text"
       >
         NEED AN ACCOUNT?
       </h3>
       <button
-        className="sign-up-btn"
+        className="lf-sign-up-btn"
         onClick={[Function]}
       >
         SIGN UP
@@ -77,12 +77,12 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
     onSubmit={[Function]}
   >
     <h2
-      className="banner-text"
+      className="lf-banner-text"
     >
       ENLIST IN TEAM ZISSOU
     </h2>
     <div
-      className="input-container"
+      className="lf-input-container"
     >
       <input
         className="name-login"
@@ -109,22 +109,22 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
       />
     </div>
     <button
-      className="submit-login"
+      className="lf-submit-login"
       disabled={true}
       onClick={[Function]}
     >
       CREATE ACCOUNT
     </button>
     <div
-      className="sign-up-container"
+      className="lf-sign-up-container"
     >
       <h3
-        className="lower-banner-text"
+        className="lf-lower-banner-text"
       >
         ERM, NVM...
       </h3>
       <button
-        className="sign-up-btn"
+        className="lf-sign-up-btn"
         onClick={[Function]}
       >
         CANCEL SIGN UP

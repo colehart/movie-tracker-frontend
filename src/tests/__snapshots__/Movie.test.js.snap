@@ -7,29 +7,29 @@ exports[`Movie should match the snapshot 1`] = `
     to="/movie/undefined"
   >
     <div
-      className="movie"
+      className="m-movie"
     >
       <div
-        className="movie-poster"
+        className="m-movie-poster"
       >
         <img
           alt="Click here for movie details."
-          className="poster"
+          className="m-poster"
           src="http://image.tmdb.org/t/p/w342//something.jpg"
         />
       </div>
     </div>
   </Link>
   <div
-    className="fav-container"
+    className="m-fav-container"
   >
     <p
-      className="fav-text"
+      className="m-fav-text"
     >
       FAVORITE
     </p>
     <div
-      className="fav-btn"
+      className="m-fav-btn"
     />
   </div>
 </div>

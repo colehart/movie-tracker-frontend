@@ -23,7 +23,6 @@ export const mockAPIFilms = {
 
 export const mockMovies = [
   {
-    backdrop_path: "backdrop-path1.jpg",
     id: 1,
     overview: "Great film.",
     poster_path: "poster-path1.jpg",
@@ -32,7 +31,6 @@ export const mockMovies = [
     isFavorite: false
   },
   {
-    backdrop_path: "backdrop-path2.jpg",
     id: 2,
     overview: "Real good film.",
     poster_path: "poster-path2.jpg",

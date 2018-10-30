@@ -13,7 +13,6 @@ export const fetchMovies = async (apiKey) => {
 const cleanMovies = (results) => {
   return results.map(movie => {
     return {
-      backdrop_path: movie.backdrop_path,
       id: movie.id,
       overview: movie.overview,
       poster_path: movie.poster_path,
