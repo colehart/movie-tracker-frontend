@@ -98,12 +98,15 @@ export class LoginForm extends Component {
           className={errorMessage ? 'error-message' : 'hidden'}>
           { errorMessage }
         </div>
-        <form onSubmit={ this.handleSubmit }>
-          <h2>
+        <form 
+          className='lf-form'
+          onSubmit={ this.handleSubmit }>
+          <h2
+            className='banner-text'>
             { isSigningUp ? 'ENLIST IN TEAM ZISSOU' : 'HAVE AN ACCOUNT?' }
           </h2>
           <div className="input-container">
-             <input
+            <input
               className={ isSigningUp ? "name-login" : "hidden" }
               name="name"
               value={name}
@@ -136,7 +139,7 @@ export class LoginForm extends Component {
             { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
           </button>          
           <div className="sign-up-container">
-            <h3>
+            <h3 className='lower-banner-text'>
               { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }
             </h3>
             <button

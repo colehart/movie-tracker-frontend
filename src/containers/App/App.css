@@ -1,10 +1,10 @@
-.App {
+.a-App {
   font-family: "Futura", sans-serif;
   letter-spacing: 0.5px;
   box-sizing: border-box;
   color: #D4A931;
 }
-.header-container {
+.a-header-container {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -13,14 +13,17 @@
   background-color: #48788C;
   box-shadow: 1px 1px 10px 4px #4c6c7c;
 }
-.logo {
+.a-logo {
   width: 400px;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  font-size: 3rem;
   font-weight: 700;
 }
-.logo-icon {
+.a-logo-icon {
   height: 100px;
+}
+
+.a-header-title {
+  font-size: 3em;
 }
