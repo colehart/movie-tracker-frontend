@@ -7,7 +7,7 @@ import * as API from '../../utils';
 import apiKey from '../../API-key.js';
 import { addMovies } from '../../actions';
 import MovieContainer from '../MovieContainer';
-import Nav from '../../components/Nav';
+import Nav from '../Nav';
 import LoginForm from '../LoginForm'
 import MovieDetails from '../../components/MovieDetails';
 import wesIcon from '../../assets/images/wes.png';

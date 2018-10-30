@@ -1,12 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Nav from '../components/Nav';
+import { Nav } from '../containers/Nav';
 
 describe('Nav', () => {
   let wrapper;
+  let removeUser;
 
   beforeEach(() => {
-    wrapper = shallow(<Nav userLoggedIn={false}/>);
+    removeUser = jest.fn()
+    wrapper = shallow(<Nav
+                        userLoggedIn={false}
+                        removeUser={removeUser}
+                      />);
   })
 
   it('should match the snapshot', () => {
@@ -14,7 +19,10 @@ describe('Nav', () => {
   })
 
   it('should toggle login text depending on user login status', () => {
-    wrapper = shallow(<Nav userLoggedIn={true} />)
+    wrapper = shallow(<Nav
+                        userLoggedIn={true}
+                        removeUser={removeUser}
+                      />)
 
     expect(wrapper).toMatchSnapshot()
   })

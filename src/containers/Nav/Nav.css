@@ -25,27 +25,36 @@
 
 .favorites-text,
 .login-text {
-  color: #D4A931;
-  visibility: hidden;
-}
-
-.active p {
   position: relative;
-  bottom: 45px;
-  right: 50px;
-  visibility: visible;
-  transition: visibility 2s ease-in-out;
+  color: #D4A931;
+  opacity: 0;
 }
 
-.active.login-text {
-  bottom: 45px;
+a:hover p {
+  opacity: 1;
+}
+
+a:hover .login-text {
+  bottom: 50px;
   right: 50px;
 }
 
-/*.active.favorites-text {
-  bottom: 60px;
-  right: 40px;
-}*/
+a:hover .favorites-text {
+  bottom: 50px;
+  right: 25px;
+}
+
+.login-text {
+  bottom: 30px;
+  right: 50px;
+  transition: 1s;
+}
+
+.favorites-text {
+  bottom: 30px;
+  right: 25px;
+  transition: 1s;
+}
 
 .login-btn {
   width: 100px;
