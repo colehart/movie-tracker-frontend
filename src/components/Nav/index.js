@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
-import userIcon from '../../assets/images/margot.png'
+import { connect } from 'react-redux';
+import { removeUser } from '../../actions';
+import userIcon from '../../assets/images/margot.png';
 
 const Nav = (props) => {
-  const { userLoggedIn } = props
+  const { userLoggedIn, removeUser } = props
 
   const checkActive = (event) => {
     if(event.target.closest('a').classList.contains('active')) {
@@ -28,27 +30,41 @@ const Nav = (props) => {
           </p>
         </div>
       </NavLink>
-      <NavLink
-        to="/login"
-        className="login-btn"
-      >
+      <NavLink to="/login" className={userLoggedIn ? "hidden" : "login-btn"}>
         <img
           className="login-icon"
           src={ userIcon }
           alt='Click here to login'/>
-        <p
-          className='login-text'
-        >
-          {userLoggedIn ? 'LOGOUT' : 'LOGIN'}
+        <p className="login-text">
+          LOGIN
         </p>
       </NavLink>
+      <button 
+        className={userLoggedIn ? "logout-btn" : "hidden"}
+        onClick={removeUser}
+      >
+        <img
+          className="login-icon"
+          src={ userIcon } 
+          alt='Click here to login'/>
+        <p className="login-text">
+          LOGOUT
+        </p>
+      </button>
     </nav>
   )
 }
 
+export const mapStateToProps = (state) => ({
+  userLoggedIn: state.user.id
+}) 
+
+export const mapDispatchToProps = (dispatch) => ({
+  removeUser: () => dispatch(removeUser())
+})
 
 Nav.propTypes = {
   userLoggedIn: PropTypes.bool.isRequired
 }
 
-export default Nav;
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

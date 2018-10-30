@@ -4,10 +4,12 @@ export const userReducer = (state = {}, action) => {
       return { 
         id: action.id, 
       }
+    case 'REMOVE_USER':
+      return {}
     default:
       return state
   }
 }
 
 //when guest clicks favorite, route to login.
-//when guest signs up successfully, user is logged in, returned to / (extension: or individual movie page) and fave is added
+//when logged in successfully favorite auto-added

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 
 export const MovieContainer = (props) => {
-  if(!props.isLoggedIn) {
+  if(!props.isLoggedIn && props.location === '/login') {
     props.history.push('/login')
   }
   const movies = props.movies.map(movie => {

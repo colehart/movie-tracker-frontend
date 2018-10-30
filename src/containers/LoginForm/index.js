@@ -51,8 +51,6 @@ export class LoginForm extends Component {
 
       this.checkForError(isSigningUp, result)
     }
-    this.resetForm()
-    this.toggleSubmit()
   }
 
   checkForError = (isSigningUp, result) => {
@@ -67,15 +65,6 @@ export class LoginForm extends Component {
         errorMessage: result
       })
     }
-  }
-
-  resetForm = () => {
-    this.setState({
-      name: '',
-      email: '',
-      password: '',
-      isSigningUp: false
-    })
   }
 
   createNewUser = async () => {
@@ -168,7 +157,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 LoginForm.propTypes = {
-  setUser: PropTypes.func.isRequired
+  setUser: PropTypes.func.isRequired,
 }
 
 export default connect(null, mapDispatchToProps)(LoginForm);

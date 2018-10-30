@@ -13,7 +13,6 @@ export const setUser = (id) => ({
   id
 })
 
-// export const toggleUserLogin = (id) => ({
-//   type: 'TOGGLE_USER_LOGIN',
-//   id
-// })
+export const removeUser = () => ({
+  type: 'REMOVE_USER'
+})

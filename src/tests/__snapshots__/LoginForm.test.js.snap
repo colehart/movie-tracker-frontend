@@ -16,7 +16,6 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
     >
       <input
         className="hidden"
-        isrequired="true"
         name="name"
         onChange={[Function]}
         placeholder="Klaus"
@@ -24,7 +23,6 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
       />
       <input
         className="email-login"
-        isrequired="true"
         name="email"
         onChange={[Function]}
         placeholder="wes@anderson.com"
@@ -33,7 +31,6 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
       />
       <input
         className="password-login"
-        isrequired="true"
         name="password"
         onChange={[Function]}
         placeholder="Type password here"
@@ -41,19 +38,13 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
         value=""
       />
     </div>
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      exact={true}
-      to="/login"
+    <button
+      className="submit-login"
+      disabled={true}
+      onClick={[Function]}
     >
-      <button
-        className="submit-login"
-        onClick={[Function]}
-      >
-        LOGIN
-      </button>
-    </NavLink>
+      LOGIN
+    </button>
     <div
       className="sign-up-container"
     >
@@ -87,7 +78,6 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
     >
       <input
         className="name-login"
-        isrequired="true"
         name="name"
         onChange={[Function]}
         placeholder="Klaus"
@@ -95,7 +85,6 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
       />
       <input
         className="email-login"
-        isrequired="true"
         name="email"
         onChange={[Function]}
         placeholder="klaus@daimler.net"
@@ -104,7 +93,6 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
       />
       <input
         className="password-login"
-        isrequired="true"
         name="password"
         onChange={[Function]}
         placeholder="Type password here"
@@ -112,19 +100,13 @@ exports[`LoginForm LoginFormComponent should toggle login view when sign up butt
         value=""
       />
     </div>
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      exact={true}
-      to="/login"
+    <button
+      className="submit-login"
+      disabled={true}
+      onClick={[Function]}
     >
-      <button
-        className="submit-login"
-        onClick={[Function]}
-      >
-        CREATE ACCOUNT
-      </button>
-    </NavLink>
+      CREATE ACCOUNT
+    </button>
     <div
       className="sign-up-container"
     >
@@ -146,6 +128,7 @@ exports[`LoginForm LoginFormComponent state should match the snapshot 1`] = `
 Object {
   "email": "",
   "errorMessage": "",
+  "isDisabled": true,
   "isSigningUp": false,
   "name": "",
   "password": "",
