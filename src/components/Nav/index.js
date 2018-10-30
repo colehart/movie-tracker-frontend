@@ -7,7 +7,7 @@ import { removeUser } from '../../actions';
 import userIcon from '../../assets/images/margot.png';
 
 const Nav = (props) => {
-  const { userLoggedIn } = props
+  const { userLoggedIn, removeUser } = props
 
   const checkActive = (event) => {
     if(event.target.closest('a').classList.contains('active')) {
@@ -30,20 +30,27 @@ const Nav = (props) => {
           </p>
         </div>
       </NavLink>
-      <NavLink
-        to="/login"
-        className="login-btn"
-      >
+      <NavLink to="/login" className={userLoggedIn ? "hidden" : "login-btn"}>
         <img
           className="login-icon"
           src={ userIcon }
           alt='Click here to login'/>
-        <p
-          className='login-text'
-        >
-          {userLoggedIn ? 'LOGOUT' : 'LOGIN'}
+        <p className="login-text">
+          LOGIN
         </p>
       </NavLink>
+      <button 
+        className={userLoggedIn ? "logout-btn" : "hidden"}
+        onClick={removeUser}
+      >
+        <img
+          className="login-icon"
+          src={ userIcon } 
+          alt='Click here to login'/>
+        <p className="login-text">
+          LOGOUT
+        </p>
+      </button>
     </nav>
   )
 }
