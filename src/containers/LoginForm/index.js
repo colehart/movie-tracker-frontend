@@ -157,7 +157,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 LoginForm.propTypes = {
-  setUser: PropTypes.func.isRequired
+  setUser: PropTypes.func.isRequired,
 }
 
 export default connect(null, mapDispatchToProps)(LoginForm);

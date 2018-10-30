@@ -21,7 +21,7 @@ exports[`App App Component should match the snapshot 1`] = `
         WesTracker
       </h1>
     </Link>
-    <Nav
+    <Connect(Nav)
       userLoggedIn={false}
     />
   </header>

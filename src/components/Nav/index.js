@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
-import userIcon from '../../assets/images/margot.png'
+import { connect } from 'react-redux';
+import { removeUser } from '../../actions';
+import userIcon from '../../assets/images/margot.png';
 
 const Nav = (props) => {
   const { userLoggedIn } = props
@@ -46,9 +48,16 @@ const Nav = (props) => {
   )
 }
 
+export const mapStateToProps = (state) => ({
+  userLoggedIn: state.user.id
+}) 
+
+export const mapDispatchToProps = (dispatch) => ({
+  removeUser: () => dispatch(removeUser())
+})
 
 Nav.propTypes = {
   userLoggedIn: PropTypes.bool.isRequired
 }
 
-export default Nav;
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
