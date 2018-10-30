@@ -9,18 +9,18 @@ const Movie = ( { poster_path, id } ) => {
   return (
     <div>
       <Link to={`/movie/${id}`}>
-        <div className='movie'>
-          <div className='movie-poster'>
+        <div className='m-movie'>
+          <div className='m-movie-poster'>
             <img
-              className='poster'
+              className='m-poster'
               src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
               alt='Click here for movie details.'/>
           </div>
         </div>
       </Link>
-      <div className='fav-container'>
-        <p className='fav-text'>FAVORITE</p>
-        <div className='fav-btn'>
+      <div className='m-fav-container'>
+        <p className='m-fav-text'>FAVORITE</p>
+        <div className='m-fav-btn'>
         </div>
       </div>
     </div>

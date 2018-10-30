@@ -1,4 +1,4 @@
-.error-message {
+.lf-error-message {
   height: 50px;
   width: 100%;
   background-color: #CB2E0F;
@@ -20,15 +20,15 @@
   letter-spacing: 0.5px;
 }
 
-.banner-text {
+.lf-banner-text {
   font-size: 2rem;
 }
 
-.lower-banner-text {
+.lf-lower-banner-text {
   font-size: 1.25rem;
 }
 
-.input-container {
+.lf-input-container {
   height: 75px;
   display: flex;
   flex-direction: column;
@@ -49,46 +49,48 @@ input {
   padding-left: 5px;
 }
 
-.submit-login, 
-.sign-up-btn {
+.lf-submit-login, 
+.lf-sign-up-btn {
   border-width: 2px;
-  height: 1.75rem;
+  height: 2.2rem;
   width: 208px;
   color: #D4AA32;
   letter-spacing: 1px;
+  font-size: 1.25rem;
+  font-family: Futura, sans-serif;
 }
 
-.submit-login:hover, 
-.sign-up-btn:hover {
+.lf-submit-login:hover, 
+.lf-sign-up-btn:hover {
   border: 2px #48788C;
   background-color: #D4AA32;
   color: #48788C;
 }
 
-.submit-login:active, 
-.sign-up-btn:active {
+.lf-submit-login:active, 
+.lf-sign-up-btn:active {
   border: 2px #C8901D;
   background-color: #C8901D;
 }
 
-.submit-login:focus, 
-.sign-up-btn:focus {
+.lf-submit-login:focus, 
+.lf-sign-up-btn:focus {
   outline: none;
 }
 
-.submit-login:disabled, 
-.sign-up-btn:disabled {
+.lf-submit-login:disabled, 
+.lf-sign-up-btn:disabled {
   border: 2px #48788C;
   background-color: #70929C;
   color: #48788C;
 }
 
-.submit-login {
+.lf-submit-login {
   border-color: #48788C;
   background-color: #48788C;
 }
 
-.sign-up-container {
+.lf-sign-up-container {
   height: 95px;
   display: flex;
   flex-direction: column;
@@ -97,7 +99,7 @@ input {
   color: #ffffff;
 }
 
-.sign-up-btn {
+.lf-sign-up-btn {
   color: #ffffff;
   border-color: #ffffff;
   background-color: transparent;

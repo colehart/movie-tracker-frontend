@@ -95,17 +95,17 @@ export class LoginForm extends Component {
     return(
       <div>
         <div
-          className={errorMessage ? 'error-message' : 'hidden'}>
+          className={errorMessage ? 'lf-error-message' : 'hidden'}>
           { errorMessage }
         </div>
         <form 
           className='lf-form'
           onSubmit={ this.handleSubmit }>
           <h2
-            className='banner-text'>
+            className='lf-banner-text'>
             { isSigningUp ? 'ENLIST IN TEAM ZISSOU' : 'HAVE AN ACCOUNT?' }
           </h2>
-          <div className="input-container">
+          <div className="lf-input-container">
             <input
               className={ isSigningUp ? "name-login" : "hidden" }
               name="name"
@@ -133,17 +133,17 @@ export class LoginForm extends Component {
             />
           </div>
           <button
-            className="submit-login"
+            className="lf-submit-login"
             disabled={isDisabled}
             onClick={this.handleSubmit}>
             { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
           </button>          
-          <div className="sign-up-container">
-            <h3 className='lower-banner-text'>
+          <div className="lf-sign-up-container">
+            <h3 className='lf-lower-banner-text'>
               { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }
             </h3>
             <button
-              className="sign-up-btn"
+              className="lf-sign-up-btn"
               onClick={this.toggleSigningUp}
             >
               { isSigningUp ? 'CANCEL SIGN UP' : 'SIGN UP' }

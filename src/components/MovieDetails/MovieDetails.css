@@ -4,15 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .d-btn-container {
   /*border: 2px solid red;*/
   margin: 0 0 30px;
-}
-
-.d-back-btn {
 }
 
 .d-poster {
@@ -30,9 +26,11 @@
 }
 
 .d-title {
-
-}
-
-.d-overview {
-
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
