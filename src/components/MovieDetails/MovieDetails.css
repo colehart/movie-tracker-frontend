@@ -1,0 +1,28 @@
+.details-container {
+  width: 70%;
+  margin: auto;
+}
+
+.backdrop {
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
+  background: 
+}
+
+.back-btn {
+
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+
+}
+
+.overview {
+
+}

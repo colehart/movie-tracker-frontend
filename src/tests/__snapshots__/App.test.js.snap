@@ -7,11 +7,9 @@ exports[`App App Component should match the snapshot 1`] = `
   <header
     className="header-container"
   >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
+    <Link
       className="logo"
-      exact={true}
+      replace={false}
       to="/"
     >
       <img
@@ -22,7 +20,7 @@ exports[`App App Component should match the snapshot 1`] = `
       <h1>
         WesTracker
       </h1>
-    </NavLink>
+    </Link>
     <Nav
       userLoggedIn={false}
     />
