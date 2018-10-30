@@ -1,4 +1,4 @@
-.movie {
+.m-movie {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,12 +8,12 @@
   padding: 0;
 }
 
-.poster {
+.m-poster {
   width: 250px;
 }
 
 /*favorite container should be display: none / hidden until user hovers over it. Once movie is clicked/ isFavorite, display should be show*/
-.fav-container {
+.m-fav-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -22,11 +22,11 @@
   height: 40px;
 }
 
-.fav-text {
+.m-fav-text {
   color: #48788C;
 }
 
-.fav-btn {
+.m-fav-btn {
   height: 30px;
   width: 30px;
   background-image: url('../../assets/images/hatOutline-blue.svg');
