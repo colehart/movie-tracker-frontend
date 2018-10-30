@@ -20,7 +20,7 @@ export class LoginForm extends Component {
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
-
+    this.validateUser();
     this.setState({[name]: value})
   }
 
@@ -62,12 +62,21 @@ export class LoginForm extends Component {
   validateUser = () => {
     const { isSigningUp, email, password, name } = this.state
     if ( isSigningUp && name && email && password ) {
+      this.enableSubmit();
       return true
     } else if (!isSigningUp && email && password) {
+      this.enableSubmit();
       return true
     } else {
       return false
     }
+  }
+
+  enableSubmit = () => {
+    const submitBtn = document.querySelector('.submit-login')
+    if(submitBtn.disabled){
+      submitBtn.disabled = false
+    } 
   }
 
   resetForm = () => {
@@ -96,6 +105,8 @@ export class LoginForm extends Component {
     return await API.loginUser(user)
   }
 
+
+
   toggleSigningUp = (event) => {
     event.preventDefault()
     this.setState({isSigningUp: !this.state.isSigningUp})
@@ -107,7 +118,7 @@ export class LoginForm extends Component {
     return(
       <div>
         <div
-          className={errorMessage ? '' : 'hidden'}>
+          className={errorMessage ? 'error-message' : 'hidden'}>
           { errorMessage }
         </div>
         <form onSubmit={ this.handleSubmit }>
@@ -121,7 +132,6 @@ export class LoginForm extends Component {
               value={name}
               onChange={ this.handleInputChange }
               placeholder='Klaus'
-              isrequired='true'
             />
             <input
               className="email-login"
@@ -132,7 +142,6 @@ export class LoginForm extends Component {
               placeholder= {
                 isSigningUp ? 'klaus@daimler.net' : "wes@anderson.com"
               }
-              isrequired='true'
             />
             <input
               className="password-login"
@@ -141,12 +150,12 @@ export class LoginForm extends Component {
               value={password}
               onChange={this.handleInputChange}
               placeholder="Type password here"
-              isrequired='true'
             />
           </div>
-          <NavLink exact to={this.validateUser ? '/login' : '/' }>
+          <NavLink exact to={this.validateUser ? '/' : '/login' }>
             <button
               className="submit-login"
+              disabled={true}
               onClick={this.validateUser ? this.handleSubmit : ''}>
               { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
             </button>

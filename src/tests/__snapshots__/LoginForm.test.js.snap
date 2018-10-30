@@ -1,134 +1,151 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <h2>
-    HAVE AN ACCOUNT?
-  </h2>
+<div>
   <div
-    className="input-container"
+    className="hidden"
+  />
+  <form
+    onSubmit={[Function]}
   >
-    <input
-      className="hidden"
-      name="name"
-      onChange={[Function]}
-      placeholder="Klaus"
-      value=""
-    />
-    <input
-      className="email-login"
-      name="email"
-      onChange={[Function]}
-      placeholder="wes@anderson.com"
-      type="email"
-      value=""
-    />
-    <input
-      className="password-login"
-      name="password"
-      onChange={[Function]}
-      placeholder="Type password here"
-      type="password"
-      value=""
-    />
-  </div>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    exact={true}
-    to="/"
-  >
-    <button
-      className="submit-login"
-      onClick={[Function]}
+    <h2>
+      HAVE AN ACCOUNT?
+    </h2>
+    <div
+      className="input-container"
     >
-      LOGIN
-    </button>
-  </NavLink>
-  <div
-    className="sign-up-container"
-  >
-    <h3>
-      NEED AN ACCOUNT?
-    </h3>
-    <button
-      className="sign-up-btn"
-      onClick={[Function]}
+      <input
+        className="hidden"
+        isrequired="true"
+        name="name"
+        onChange={[Function]}
+        placeholder="Klaus"
+        value=""
+      />
+      <input
+        className="email-login"
+        isrequired="true"
+        name="email"
+        onChange={[Function]}
+        placeholder="wes@anderson.com"
+        type="email"
+        value=""
+      />
+      <input
+        className="password-login"
+        isrequired="true"
+        name="password"
+        onChange={[Function]}
+        placeholder="Type password here"
+        type="password"
+        value=""
+      />
+    </div>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      exact={true}
+      to="/login"
     >
-      SIGN UP
-    </button>
-  </div>
-</form>
+      <button
+        className="submit-login"
+        onClick={[Function]}
+      >
+        LOGIN
+      </button>
+    </NavLink>
+    <div
+      className="sign-up-container"
+    >
+      <h3>
+        NEED AN ACCOUNT?
+      </h3>
+      <button
+        className="sign-up-btn"
+        onClick={[Function]}
+      >
+        SIGN UP
+      </button>
+    </div>
+  </form>
+</div>
 `;
 
 exports[`LoginForm LoginFormComponent should toggle login view when sign up button is clicked 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <h2>
-    ENLIST IN TEAM ZISSOU
-  </h2>
+<div>
   <div
-    className="input-container"
+    className="hidden"
+  />
+  <form
+    onSubmit={[Function]}
   >
-    <input
-      className="name-login"
-      name="name"
-      onChange={[Function]}
-      placeholder="Klaus"
-      value=""
-    />
-    <input
-      className="email-login"
-      name="email"
-      onChange={[Function]}
-      placeholder="klaus@daimler.net"
-      type="email"
-      value=""
-    />
-    <input
-      className="password-login"
-      name="password"
-      onChange={[Function]}
-      placeholder="Type password here"
-      type="password"
-      value=""
-    />
-  </div>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    exact={true}
-    to="/"
-  >
-    <button
-      className="submit-login"
-      onClick={[Function]}
+    <h2>
+      ENLIST IN TEAM ZISSOU
+    </h2>
+    <div
+      className="input-container"
     >
-      CREATE ACCOUNT
-    </button>
-  </NavLink>
-  <div
-    className="sign-up-container"
-  >
-    <h3>
-      ERM, NVM...
-    </h3>
-    <button
-      className="sign-up-btn"
-      onClick={[Function]}
+      <input
+        className="name-login"
+        isrequired="true"
+        name="name"
+        onChange={[Function]}
+        placeholder="Klaus"
+        value=""
+      />
+      <input
+        className="email-login"
+        isrequired="true"
+        name="email"
+        onChange={[Function]}
+        placeholder="klaus@daimler.net"
+        type="email"
+        value=""
+      />
+      <input
+        className="password-login"
+        isrequired="true"
+        name="password"
+        onChange={[Function]}
+        placeholder="Type password here"
+        type="password"
+        value=""
+      />
+    </div>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      exact={true}
+      to="/login"
     >
-      CANCEL SIGN UP
-    </button>
-  </div>
-</form>
+      <button
+        className="submit-login"
+        onClick={[Function]}
+      >
+        CREATE ACCOUNT
+      </button>
+    </NavLink>
+    <div
+      className="sign-up-container"
+    >
+      <h3>
+        ERM, NVM...
+      </h3>
+      <button
+        className="sign-up-btn"
+        onClick={[Function]}
+      >
+        CANCEL SIGN UP
+      </button>
+    </div>
+  </form>
+</div>
 `;
 
 exports[`LoginForm LoginFormComponent state should match the snapshot 1`] = `
 Object {
   "email": "",
+  "errorMessage": "",
   "isSigningUp": false,
   "name": "",
   "password": "",

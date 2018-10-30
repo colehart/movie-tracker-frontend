@@ -1,3 +1,14 @@
+.error-message {
+  height: 50px;
+  width: 100%;
+  background-color: #CB2E0F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 3s ease-out;
+}
+
+
 form {
   height: 300px;
   width: 80%;
@@ -58,6 +69,12 @@ button:active {
 
 button:focus {
   outline: none;
+}
+
+button:disabled {
+  border: 2px #48788C;
+  background-color: #70929C;
+  color: #48788C;
 }
 
 .submit-login {
