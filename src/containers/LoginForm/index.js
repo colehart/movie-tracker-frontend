@@ -14,14 +14,15 @@ export class LoginForm extends Component {
       email: '',
       password: '',
       isSigningUp: false,
-      errorMessage: ''
+      errorMessage: '',
+      isDisabled: true
     }
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = async (event) => {
     const { name, value } = event.target;
-    this.validateUser();
-    this.setState({[name]: value})
+    await this.setState({[name]: value})
+    await this.validateUser();
   }
 
   handleSubmit = async (event) => {
@@ -59,24 +60,18 @@ export class LoginForm extends Component {
     }
   }
 
-  validateUser = () => {
+  validateUser = async () => {
     const { isSigningUp, email, password, name } = this.state
     if ( isSigningUp && name && email && password ) {
-      this.enableSubmit();
+      await this.setState({isDisabled: false})
       return true
     } else if (!isSigningUp && email && password) {
-      this.enableSubmit();
+      await this.setState({isDisabled: false})
       return true
     } else {
+      await this.setState({isDisabled: true})
       return false
     }
-  }
-
-  enableSubmit = () => {
-    const submitBtn = document.querySelector('.submit-login')
-    if(submitBtn.disabled){
-      submitBtn.disabled = false
-    } 
   }
 
   resetForm = () => {
@@ -113,7 +108,7 @@ export class LoginForm extends Component {
   }
 
   render() {
-    const { name, isSigningUp, email, password, errorMessage } = this.state
+    const { name, isSigningUp, email, password, errorMessage, isDisabled } = this.state
 
     return(
       <div>
@@ -155,7 +150,7 @@ export class LoginForm extends Component {
           <NavLink exact to={this.validateUser ? '/' : '/login' }>
             <button
               className="submit-login"
-              disabled={true}
+              disabled={isDisabled}
               onClick={this.validateUser ? this.handleSubmit : ''}>
               { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
             </button>
