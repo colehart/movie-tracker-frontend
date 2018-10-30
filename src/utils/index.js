@@ -26,33 +26,41 @@ const cleanMovies = (results) => {
 
 export const addUser = async (user) => {
   const dataBaseAPI = 'http://localhost:3000/api/users/new';
-  const response = await fetch(dataBaseAPI, {
-    method: 'POST',
-    body: JSON.stringify(user),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  } else {
+
+  try { 
+    const response = await fetch(dataBaseAPI, {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    } 
     return await response.json();
+  } catch (error){
+    return 'Email has already been used';
   }
 }
 
 export const loginUser = async (user) => {
   const dataBaseAPI = 'http://localhost:3000/api/users';
   const email = user.email.toLowerCase();
-  const response = await fetch(dataBaseAPI, {
-    method: 'POST',
-    body: JSON.stringify({email, password: user.password}),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  } else {
-    return await response.json();
+  try {
+    const response = await fetch(dataBaseAPI, {
+      method: 'POST',
+      body: JSON.stringify({email, password: user.password}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    } else {
+      return await response.json();
+    } 
+  } catch (error) {
+    return 'Email and password do not match.'
   }
 }
