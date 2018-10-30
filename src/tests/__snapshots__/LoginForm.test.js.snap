@@ -34,12 +34,19 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
       value=""
     />
   </div>
-  <button
-    className="submit-login"
-    onClick={[Function]}
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    exact={true}
+    to="/"
   >
-    LOGIN
-  </button>
+    <button
+      className="submit-login"
+      onClick={[Function]}
+    >
+      LOGIN
+    </button>
+  </NavLink>
   <div
     className="sign-up-container"
   >
@@ -57,63 +64,66 @@ exports[`LoginForm LoginFormComponent should match the snapshot 1`] = `
 `;
 
 exports[`LoginForm LoginFormComponent should toggle login view when sign up button is clicked 1`] = `
-<LoginForm
-  addUser={[MockFunction]}
+<form
+  onSubmit={[Function]}
 >
-  <form
-    onSubmit={[Function]}
+  <h2>
+    ENLIST IN TEAM ZISSOU
+  </h2>
+  <div
+    className="input-container"
   >
-    <h2>
-      HAVE AN ACCOUNT?
-    </h2>
-    <div
-      className="input-container"
-    >
-      <input
-        className="hidden"
-        name="name"
-        onChange={[Function]}
-        placeholder="Klaus"
-        value=""
-      />
-      <input
-        className="email-login"
-        name="email"
-        onChange={[Function]}
-        placeholder="wes@anderson.com"
-        type="email"
-        value=""
-      />
-      <input
-        className="password-login"
-        name="password"
-        onChange={[Function]}
-        placeholder="Type password here"
-        type="password"
-        value=""
-      />
-    </div>
+    <input
+      className="name-login"
+      name="name"
+      onChange={[Function]}
+      placeholder="Klaus"
+      value=""
+    />
+    <input
+      className="email-login"
+      name="email"
+      onChange={[Function]}
+      placeholder="klaus@daimler.net"
+      type="email"
+      value=""
+    />
+    <input
+      className="password-login"
+      name="password"
+      onChange={[Function]}
+      placeholder="Type password here"
+      type="password"
+      value=""
+    />
+  </div>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    exact={true}
+    to="/"
+  >
     <button
       className="submit-login"
       onClick={[Function]}
     >
-      LOGIN
+      CREATE ACCOUNT
     </button>
-    <div
-      className="sign-up-container"
+  </NavLink>
+  <div
+    className="sign-up-container"
+  >
+    <h3>
+      ERM, NVM...
+    </h3>
+    <button
+      className="sign-up-btn"
+      onClick={[Function]}
     >
-      <h3>
-        NEED AN ACCOUNT?
-      </h3>
-      <button
-        className="sign-up-btn"
-        onClick={[Function]}
-      >
-        SIGN UP
-      </button>
-    </div>
-  </form>
-</LoginForm>
+      CANCEL SIGN UP
+    </button>
+  </div>
+</form>
 `;
 
 exports[`LoginForm LoginFormComponent state should match the snapshot 1`] = `

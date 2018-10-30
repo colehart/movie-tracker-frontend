@@ -8,20 +8,10 @@ export const addMovies = (movies) => ({
 //   id
 // })
 
-export const addUser = (name, email, password, id) => ({
-  type: 'ADD_USER',
-  name,
-  email,
-  password,
+export const setUser = (id) => ({
+  type: 'SET_USER',
   id
 })
-
-// export const validateUser = (email, password, id) => ({
-//   type: 'VALIDATE_USER',
-//   email,
-//   password,
-//   id
-// })
 
 // export const toggleUserLogin = (id) => ({
 //   type: 'TOGGLE_USER_LOGIN',

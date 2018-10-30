@@ -21,22 +21,46 @@ const cleanMovies = (results) => {
       title: movie.title,
       isFavorite: false
     }
-  })
+  })  
 }
 
 export const addUser = async (user) => {
   const dataBaseAPI = 'http://localhost:3000/api/users/new';
-  const response = await fetch(dataBaseAPI, {
-    method: 'POST',
-    body: JSON.stringify(user),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  } else {
-    const result = await response.json();
-    return result
+
+  try { 
+    const response = await fetch(dataBaseAPI, {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    } 
+    return await response.json();
+  } catch (error){
+    return 'Email has already been used';
+  }
+}
+
+export const loginUser = async (user) => {
+  const dataBaseAPI = 'http://localhost:3000/api/users';
+  const email = user.email.toLowerCase();
+  try {
+    const response = await fetch(dataBaseAPI, {
+      method: 'POST',
+      body: JSON.stringify({email, password: user.password}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    } else {
+      return await response.json();
+    } 
+  } catch (error) {
+    return 'Email and password do not match.'
   }
 }

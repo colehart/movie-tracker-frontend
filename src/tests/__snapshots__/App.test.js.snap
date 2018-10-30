@@ -11,6 +11,7 @@ exports[`App App Component should match the snapshot 1`] = `
       activeClassName="active"
       aria-current="page"
       className="logo"
+      exact={true}
       to="/"
     >
       <img
@@ -35,6 +36,10 @@ exports[`App App Component should match the snapshot 1`] = `
     component={[Function]}
     exact={true}
     path="/login"
+  />
+  <Route
+    path="/movie/:id"
+    render={[Function]}
   />
 </div>
 `;
