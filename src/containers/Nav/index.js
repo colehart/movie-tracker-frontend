@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeUser } from '../../actions';
 import userIcon from '../../assets/images/margot.png';
+import './Nav.css';
 
-const Nav = (props) => {
+export const Nav = (props) => {
   const { userLoggedIn, removeUser } = props
 
-  const checkActive = (event) => {
-    if(event.target.closest('a').classList.contains('active')) {
-
+  const handleHover = (event) => {
+    if(!event.target.classList.contains('active')) {
+      event.target.classList.add('active')
+    } else {
+      event.target.classList.remove('active')
     }
   }
 
@@ -21,31 +23,44 @@ const Nav = (props) => {
         to="/favorites"
         className="fav-btn-group"
       >
-        <div className="fav-btn-nav" >
+        <div
+          className="fav-btn-nav"
+          onMouseOver={handleHover}
+          onMouseOut={handleHover}
+        >
           <span className="num-favs">0</span>
           <p
-            className={`favorites-text ${checkActive}`}
+            className={`favorites-text`}
           >
             FAVORITES
           </p>
         </div>
       </NavLink>
-      <NavLink to="/login" className={userLoggedIn ? "hidden" : "login-btn"}>
-        <img
-          className="login-icon"
-          src={ userIcon }
-          alt='Click here to login'/>
-        <p className="login-text">
-          LOGIN
-        </p>
+      <NavLink
+        to="/login"
+        className={userLoggedIn ? "hidden" : "show"}
+      >
+        <div
+          className="login-btn"
+          onMouseOver={handleHover}
+          onMouseOut={handleHover}
+        >
+          <img
+            className="login-icon"
+            src={ userIcon }
+            alt='Click here to login'/>
+          <p className="login-text">
+            LOGIN
+          </p>
+        </div>
       </NavLink>
-      <button 
+      <button
         className={userLoggedIn ? "logout-btn" : "hidden"}
         onClick={removeUser}
       >
         <img
           className="login-icon"
-          src={ userIcon } 
+          src={ userIcon }
           alt='Click here to login'/>
         <p className="login-text">
           LOGOUT
@@ -57,7 +72,7 @@ const Nav = (props) => {
 
 export const mapStateToProps = (state) => ({
   userLoggedIn: state.user.id
-}) 
+})
 
 export const mapDispatchToProps = (dispatch) => ({
   removeUser: () => dispatch(removeUser())

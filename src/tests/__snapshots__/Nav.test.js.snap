@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should match the snapshot 1`] = `undefined`;
-
-exports[`Nav should toggle login text depending on user login status 1`] = `
+exports[`Nav should match the snapshot 1`] = `
 <nav
   className="nav-container"
 >
@@ -14,6 +12,8 @@ exports[`Nav should toggle login text depending on user login status 1`] = `
   >
     <div
       className="fav-btn-nav"
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
     >
       <span
         className="num-favs"
@@ -30,8 +30,29 @@ exports[`Nav should toggle login text depending on user login status 1`] = `
   <NavLink
     activeClassName="active"
     aria-current="page"
-    className="login-btn"
+    className="show"
     to="/login"
+  >
+    <div
+      className="login-btn"
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    >
+      <img
+        alt="Click here to login"
+        className="login-icon"
+        src="margot.png"
+      />
+      <p
+        className="login-text"
+      >
+        LOGIN
+      </p>
+    </div>
+  </NavLink>
+  <button
+    className="hidden"
+    onClick={[MockFunction]}
   >
     <img
       alt="Click here to login"
@@ -43,6 +64,74 @@ exports[`Nav should toggle login text depending on user login status 1`] = `
     >
       LOGOUT
     </p>
+  </button>
+</nav>
+`;
+
+exports[`Nav should toggle login text depending on user login status 1`] = `
+<nav
+  className="nav-container"
+>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="fav-btn-group"
+    to="/favorites"
+  >
+    <div
+      className="fav-btn-nav"
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    >
+      <span
+        className="num-favs"
+      >
+        0
+      </span>
+      <p
+        className="favorites-text"
+      >
+        FAVORITES
+      </p>
+    </div>
   </NavLink>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="hidden"
+    to="/login"
+  >
+    <div
+      className="login-btn"
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    >
+      <img
+        alt="Click here to login"
+        className="login-icon"
+        src="margot.png"
+      />
+      <p
+        className="login-text"
+      >
+        LOGIN
+      </p>
+    </div>
+  </NavLink>
+  <button
+    className="logout-btn"
+    onClick={[MockFunction]}
+  >
+    <img
+      alt="Click here to login"
+      className="login-icon"
+      src="margot.png"
+    />
+    <p
+      className="login-text"
+    >
+      LOGOUT
+    </p>
+  </button>
 </nav>
 `;
