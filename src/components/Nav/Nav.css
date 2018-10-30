@@ -23,6 +23,18 @@
   left: 25px;
 }
 
+.fav-text,
+.login-text {
+  color: #D4A931;
+ }
+
+ .slide {
+  position: relative;
+  top: 15px;
+  visibility: visible;
+  transition: ;
+ }
+
 .login-btn {
   width: 100px;
   display: flex;
