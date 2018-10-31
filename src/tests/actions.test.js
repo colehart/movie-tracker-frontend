@@ -14,14 +14,14 @@ describe('actions', () => {
   })
 
   it('should have a type of SET_USER', () => {
-    const id = mockId;
+    const userId = mockId;
 
     const expectedAction = {
       type: 'SET_USER',
-      id,
+      userId,
     }
 
-    const result = Actions.setUser(id)
+    const result = Actions.setUser(userId)
 
     expect(result).toEqual(expectedAction)
   })
@@ -37,13 +37,13 @@ describe('actions', () => {
   })
 
   it('should have a type of TOGGLE_FAVORITE', () => {
-    const id = mockId;
+    const movieId = mockId;
     const expectedAction = {
       type: 'TOGGLE_FAVORITE',
-      id
+      movieId
     }
 
-    const result = Actions.toggleFavorite(id)
+    const result = Actions.toggleFavorite(movieId)
 
     expect(result).toEqual(expectedAction)
   })

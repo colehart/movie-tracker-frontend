@@ -3,14 +3,14 @@ export const addMovies = (movies) => ({
   movies
 })
 
-export const toggleFavorite = (id) => ({
+export const toggleFavorite = (movieId) => ({
   type: 'TOGGLE_FAVORITE',
-  id
+  movieId
 })
 
-export const setUser = (id) => ({
+export const setUser = (userId) => ({
   type: 'SET_USER',
-  id
+  userId
 })
 
 export const removeUser = () => ({
