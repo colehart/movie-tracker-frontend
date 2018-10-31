@@ -24,30 +24,16 @@ export const Nav = (props) => {
         </div>
       </NavLink>
       <NavLink
-        to="/login"
-        className={userLoggedIn ? "hidden" : "show"}
-      >
-        <div className="login-btn">
-          <img
-            className="login-icon"
-            src={ userIcon }
-            alt='Click here to login'/>
-          <p className="login-text">
-            LOGIN
-          </p>
-        </div>
-      </NavLink>
-      <NavLink
-        className={userLoggedIn ? "login-btn" : "hidden"}
+        to={userLoggedIn ? '/' : '/login'}
+        className="login-btn"
         onClick={removeUser}
-        to='/'
       >
         <img
           className="login-icon"
           src={ userIcon }
           alt='Click here to login'/>
         <p className="login-text">
-          LOGOUT
+          {userLoggedIn ? 'LOGOUT' : 'LOGIN'}
         </p>
       </NavLink>
     </nav>
