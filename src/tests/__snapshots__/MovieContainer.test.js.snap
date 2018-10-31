@@ -5,20 +5,24 @@ exports[`MovieContainer MovieContainer Component should match the snapshot 1`] =
   className="movie-container"
 >
   <Connect(Movie)
-    id={1}
     isFavorite={false}
+    key="1"
+    movie_id={1}
     overview="Great film."
     poster_path="poster-path1.jpg"
     release_date="2014-02-26"
     title="The Grand Budapest Hotel"
+    vote_average={1}
   />
   <Connect(Movie)
-    id={2}
     isFavorite={false}
+    key="2"
+    movie_id={2}
     overview="Real good film."
     poster_path="poster-path2.jpg"
     release_date="2015-03-27"
     title="The Life Aquatic with Steve Zissou"
+    vote_average={2}
   />
 </div>
 `;
