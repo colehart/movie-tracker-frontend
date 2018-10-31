@@ -22,7 +22,7 @@ export const Nav = (props) => {
       <NavLink
         onClick={() => filterMovies(movies)}
         to="/favorites"
-        className="fav-btn-group"
+        className={userLoggedIn ? "fav-btn-group" : "hidden"}
       >
         <div
           className="fav-btn-nav"
