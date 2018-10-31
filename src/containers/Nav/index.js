@@ -9,6 +9,11 @@ import './Nav.css';
 export const Nav = (props) => {
   const { userLoggedIn, removeUser, movies, filterMovies } = props
 
+  const setFaveNum = () => {
+    const filteredMovies = movies.filter(movie => movie.isFavorite)
+    return (filteredMovies.length || 0)
+  }
+
   return (
     <nav className="nav-container">
       <NavLink
@@ -17,7 +22,7 @@ export const Nav = (props) => {
         className={userLoggedIn ? "fav-btn-group" : "hidden"}
       >
         <div className="fav-btn-nav">
-          <span className="num-favs">0</span>
+          <span className="num-favs">{setFaveNum()}</span>
           <p className={`favorites-text`}>
             FAVORITES
           </p>

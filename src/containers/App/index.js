@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import * as API from '../../utils';
 import apiKey from '../../API-key.js';
-import { addMovies, toggleFavorite } from '../../actions';
+import { addMovies } from '../../actions';
 import MovieContainer from '../MovieContainer';
 import Nav from '../Nav';
 import LoginForm from '../LoginForm'
@@ -20,7 +20,6 @@ export class App extends Component {
   }
 
   render() {
-    // const { user } = this.props
     return (
       <div className="a-App">
         <header className="a-header-container">
@@ -59,17 +58,14 @@ export class App extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  // user: state.user,
   movies: state.movies
 })
 
 export const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies)),
-  toggleFavorite: (movieId) => dispatch(toggleFavorite(movieId))
 })
 
 App.propTypes = {
-  // user: PropTypes.object.isRequired,
   addMovies: PropTypes.func.isRequired
 }
 
