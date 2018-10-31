@@ -12,14 +12,16 @@
   width: 250px;
 }
 
-/*favorite container should be display: none / hidden until user hovers over it. Once movie is clicked/ isFavorite, display should be show*/
 .m-fav-container {
+  font-family: Futura, sans-serif;
+  font-size: 1.15rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   background-color: #D4A931;
   height: 40px;
+  cursor: pointer;
 }
 
 .m-fav-text {

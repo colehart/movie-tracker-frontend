@@ -49,15 +49,13 @@ export class Movie extends Component {
     }
 
     return (
-      <div>
+      <div className='m-movie'>
         <Link to={`/movie/${movie_id}`}>
-          <div className='m-movie'>
-            <div className='m-movie-poster'>
-              <img
-                className='m-poster'
-                src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
-                alt='Click here for movie details.'/>
-            </div>
+          <div className='m-movie-poster'>
+            <img
+              className='m-poster'
+              src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
+              alt='Click here for movie details.'/>
           </div>
         </Link>
         { favoriteBtn }
