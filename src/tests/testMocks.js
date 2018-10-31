@@ -1,7 +1,7 @@
 export const mockAPIFilms = {
   results: [
     {
-      votes: 1,
+      vote_average: 1,
       backdrop_path: "backdrop-path1.jpg",
       id: 1,
       overview: "Great film.",
@@ -10,7 +10,7 @@ export const mockAPIFilms = {
       title: "The Grand Budapest Hotel"
     },
     {
-      votes: 2,
+      vote_average: 2,
       backdrop_path: "backdrop-path2.jpg",
       id: 2,
       overview: "Real good film.",
