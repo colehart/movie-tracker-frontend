@@ -12,7 +12,7 @@ describe('moviesReducer', () => {
   it('should return the default state', () => {
     const expected = [];
     const result = moviesReducer(undefined, {})
-    
+
     expect(result).toEqual(expected);
   })
 
@@ -31,6 +31,16 @@ describe('moviesReducer', () => {
     const expected = mockFavMovies;
 
     const result = moviesReducer(initialState, Actions.toggleFavorite(mockFavMovieId))
+
+    expect(result).toEqual(expected)
+
+  })
+
+  it('should return state with all favorited movies', () => {
+    const initialState = mockMovies;
+    const expected = [mockFavMovies[0]];
+
+    const result = moviesReducer(initialState, Actions.filterMovies(mockFavMovies))
 
     expect(result).toEqual(expected)
 

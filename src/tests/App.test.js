@@ -30,28 +30,18 @@ describe('App', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(expected)
     })
-
-    it('should call dispatch with the toggleFavorite action', () => {
-      const mockDispatch = jest.fn()
-      const expected = Actions.toggleFavorite(mockFavMovieId)
-
-      const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.toggleFavorite(mockFavMovieId)
-
-      expect(mockDispatch).toHaveBeenCalledWith(expected)
-    })
   })
 
   describe('mapStateToProps', () => {
-    it('should parse the user from state', () => {
+    it('should parse the moves from state', () => {
       const mockState = {
-        user: mockUser
+        movies: mockMovies
       }
 
-      const expected = mockUser
+      const expected = mockMovies
 
       const mappedProps = mapStateToProps(mockState)
-      expect(mappedProps.user).toEqual(expected)
+      expect(mappedProps.movies).toEqual(expected)
     })
   })
 })

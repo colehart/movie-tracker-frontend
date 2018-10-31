@@ -15,10 +15,3 @@ export const moviesReducer = (state = [], action) => {
       return state
   }
 }
-
-// should movies have its own reducer to filter for favorites when faves button is clicked, OR
-// should favorites have a 'FILTER_FAVORITES' action associated with it
-
-
-  // case 'FILTER_FAVORITES':
-  //   return action.filter

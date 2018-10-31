@@ -9,12 +9,9 @@ import './Nav.css';
 export const Nav = (props) => {
   const { userLoggedIn, removeUser, movies, filterMovies } = props
 
-  const handleHover = (event) => {
-    if(!event.target.classList.contains('active')) {
-      event.target.classList.add('active')
-    } else {
-      event.target.classList.remove('active')
-    }
+  const setFaveNum = () => {
+    const filteredMovies = movies.filter(movie => movie.isFavorite)
+    return (filteredMovies.length || 0)
   }
 
   return (
@@ -24,48 +21,24 @@ export const Nav = (props) => {
         to="/favorites"
         className={userLoggedIn ? "fav-btn-group" : "hidden"}
       >
-        <div
-          className="fav-btn-nav"
-          onMouseOver={handleHover}
-          onMouseOut={handleHover}
-        >
-          <span className="num-favs">0</span>
-          <p
-            className={`favorites-text`}
-          >
+        <div className="fav-btn-nav">
+          <span className="num-favs">{setFaveNum()}</span>
+          <p className={`favorites-text`}>
             FAVORITES
           </p>
         </div>
       </NavLink>
       <NavLink
-        to="/login"
-        className={userLoggedIn ? "hidden" : "show"}
-      >
-        <div
-          className="login-btn"
-          onMouseOver={handleHover}
-          onMouseOut={handleHover}
-        >
-          <img
-            className="login-icon"
-            src={ userIcon }
-            alt='Click here to login'/>
-          <p className="login-text">
-            LOGIN
-          </p>
-        </div>
-      </NavLink>
-      <NavLink
-        className={userLoggedIn ? "logout-btn" : "hidden"}
+        to={userLoggedIn ? '/' : '/login'}
+        className="login-btn"
         onClick={removeUser}
-        to='/'
       >
         <img
           className="login-icon"
           src={ userIcon }
           alt='Click here to login'/>
         <p className="login-text">
-          LOGOUT
+          {userLoggedIn ? 'LOGOUT' : 'LOGIN'}
         </p>
       </NavLink>
     </nav>
@@ -83,8 +56,10 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 Nav.propTypes = {
+  userLoggedIn: PropTypes.number,
+  movies: PropTypes.array.isRequired,
   removeUser: PropTypes.func.isRequired,
-  userLoggedIn: PropTypes.number
+  filterMovies: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
