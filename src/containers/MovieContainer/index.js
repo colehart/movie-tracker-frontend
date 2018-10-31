@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './MovieContainer.css';
 import Movie from '../Movie';
 import { connect } from 'react-redux';
-// import { filterMovies } from '../../actions'
 
 
 export const MovieContainer = (props) => {
@@ -25,10 +24,6 @@ export const mapStateToProps = (state) => ({
   movies: state.movies,
   isLoggedIn: state.user.id,
 })
-
-// export const mapDispatchToProps = (dispatch) => ({
-//   filterMovies: (movies) => dispatch(filterMovies(movies))
-// })
 
 MovieContainer.propTypes = {
   movies: PropTypes.array.isRequired
