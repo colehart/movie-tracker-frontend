@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import * as API from '../../utils';
 import apiKey from '../../API-key.js';
-import { addMovies } from '../../actions';
+import { addMovies, toggleFavorite } from '../../actions';
 import MovieContainer from '../MovieContainer';
 import Nav from '../Nav';
 import LoginForm from '../LoginForm'
@@ -49,6 +49,10 @@ export class App extends Component {
           return (
             <MovieDetails {...movie} />
           )}} />
+        <Route
+          exact path='/favorites'
+          render={() => <MovieContainer /> }
+        />
       </div>
     );
   }
@@ -60,7 +64,8 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  addMovies: (movies) => dispatch(addMovies(movies))
+  addMovies: (movies) => dispatch(addMovies(movies)),
+  toggleFavorite: (movieId) => dispatch(toggleFavorite(movieId))
 })
 
 App.propTypes = {

@@ -3,16 +3,21 @@ export const addMovies = (movies) => ({
   movies
 })
 
-// export const toggleFavorite = (id) => ({
-//   type: 'TOGGLE_FAVORITE',
-//   id
-// })
+export const toggleFavorite = (movieId) => ({
+  type: 'TOGGLE_FAVORITE',
+  movieId: movieId
+})
 
-export const setUser = (id) => ({
+export const setUser = (userId) => ({
   type: 'SET_USER',
-  id
+  userId: userId
 })
 
 export const removeUser = () => ({
   type: 'REMOVE_USER'
+})
+
+export const filterMovies = (movies) => ({
+  type: 'FILTER_MOVIES',
+  movies
 })

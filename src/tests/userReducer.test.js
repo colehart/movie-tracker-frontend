@@ -32,5 +32,4 @@ describe('userReducer', () => {
     const result = userReducer(initialState, Actions.removeUser())
     expect(result).toEqual(expected)
   })
-
 })
