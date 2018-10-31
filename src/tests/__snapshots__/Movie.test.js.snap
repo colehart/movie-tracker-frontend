@@ -20,8 +20,11 @@ exports[`Movie should match the snapshot 1`] = `
       </div>
     </div>
   </Link>
-  <div
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
     className="m-fav-container"
+    to="/login"
   >
     <p
       className="m-fav-text"
@@ -31,6 +34,6 @@ exports[`Movie should match the snapshot 1`] = `
     <div
       className="m-fav-btn"
     />
-  </div>
+  </NavLink>
 </div>
 `;

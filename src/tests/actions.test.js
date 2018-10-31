@@ -40,7 +40,7 @@ describe('actions', () => {
     const movieId = mockId;
     const expectedAction = {
       type: 'TOGGLE_FAVORITE',
-      movieId
+      movie_id: movieId
     }
 
     const result = Actions.toggleFavorite(movieId)

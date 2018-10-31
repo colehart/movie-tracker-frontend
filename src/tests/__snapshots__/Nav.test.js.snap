@@ -8,6 +8,7 @@ exports[`Nav Nav Component should match the snapshot 1`] = `
     activeClassName="active"
     aria-current="page"
     className="fav-btn-group"
+    onClick={[Function]}
     to="/favorites"
   >
     <div
@@ -50,9 +51,12 @@ exports[`Nav Nav Component should match the snapshot 1`] = `
       </p>
     </div>
   </NavLink>
-  <button
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
     className="hidden"
     onClick={[MockFunction]}
+    to="/"
   >
     <img
       alt="Click here to login"
@@ -64,7 +68,7 @@ exports[`Nav Nav Component should match the snapshot 1`] = `
     >
       LOGOUT
     </p>
-  </button>
+  </NavLink>
 </nav>
 `;
 
@@ -76,6 +80,7 @@ exports[`Nav Nav Component should toggle login text depending on user login stat
     activeClassName="active"
     aria-current="page"
     className="fav-btn-group"
+    onClick={[Function]}
     to="/favorites"
   >
     <div
@@ -118,9 +123,12 @@ exports[`Nav Nav Component should toggle login text depending on user login stat
       </p>
     </div>
   </NavLink>
-  <button
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
     className="logout-btn"
     onClick={[MockFunction]}
+    to="/"
   >
     <img
       alt="Click here to login"
@@ -132,6 +140,6 @@ exports[`Nav Nav Component should toggle login text depending on user login stat
     >
       LOGOUT
     </p>
-  </button>
+  </NavLink>
 </nav>
 `;

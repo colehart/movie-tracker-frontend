@@ -1,7 +1,7 @@
 export const mockAPIFilms = {
   results: [
     {
-      votes: 2,
+      votes: 1,
       backdrop_path: "backdrop-path1.jpg",
       id: 1,
       overview: "Great film.",
@@ -10,7 +10,7 @@ export const mockAPIFilms = {
       title: "The Grand Budapest Hotel"
     },
     {
-      votes: 15,
+      votes: 2,
       backdrop_path: "backdrop-path2.jpg",
       id: 2,
       overview: "Real good film.",
@@ -23,38 +23,42 @@ export const mockAPIFilms = {
 
 export const mockMovies = [
   {
-    id: 1,
+    movie_id: 1,
     overview: "Great film.",
     poster_path: "poster-path1.jpg",
     release_date: "2014-02-26",
     title: "The Grand Budapest Hotel",
+    vote_average: 1,
     isFavorite: false
   },
   {
-    id: 2,
+    movie_id: 2,
     overview: "Real good film.",
     poster_path: "poster-path2.jpg",
     release_date: "2015-03-27",
     title: "The Life Aquatic with Steve Zissou",
+    vote_average: 2,
     isFavorite: false
   }
 ]
 
 export const mockFavMovies = [
   {
-    id: 1,
+    movie_id: 1,
     overview: "Great film.",
     poster_path: "poster-path1.jpg",
     release_date: "2014-02-26",
     title: "The Grand Budapest Hotel",
+    vote_average: 1,
     isFavorite: true
   },
   {
-    id: 2,
+    movie_id: 2,
     overview: "Real good film.",
     poster_path: "poster-path2.jpg",
     release_date: "2015-03-27",
     title: "The Life Aquatic with Steve Zissou",
+    vote_average: 2,
     isFavorite: false
   }
 ]
