@@ -74,7 +74,7 @@ export class LoginForm extends Component {
       this.props.toggleFavorite(userFav.movie_id)
     })
   }
- 
+
   createNewUser = async () => {
     const user = {
       name: this.state.name,
@@ -106,7 +106,7 @@ export class LoginForm extends Component {
           className={errorMessage ? 'lf-error-message' : 'hidden'}>
           { errorMessage }
         </div>
-        <form 
+        <form
           className='lf-form'
           onSubmit={ this.handleSubmit }>
           <h2
@@ -145,7 +145,7 @@ export class LoginForm extends Component {
             disabled={isDisabled}
             onClick={this.handleSubmit}>
             { isSigningUp ? 'CREATE ACCOUNT' : 'LOGIN' }
-          </button>          
+          </button>
           <div className="lf-sign-up-container">
             <h3 className='lf-lower-banner-text'>
               { isSigningUp ? 'ERM, NVM...' : 'NEED AN ACCOUNT?' }
