@@ -27,7 +27,7 @@ export class Movie extends Component {
 
   render() {
     let favoriteBtn;
-    const { poster_path, movie_id, isLoggedIn } = this.props;
+    const { poster_path, movie_id, isLoggedIn, isFavorite } = this.props;
 
     if (isLoggedIn) {
       favoriteBtn =
@@ -35,7 +35,8 @@ export class Movie extends Component {
           onClick={this.handleClick}
         >
           <p className='m-fav-text'>FAVORITE</p>
-          <div className='m-fav-btn'>
+          <div
+            className={`m-fav-btn ${isFavorite ? 'red' : ''}`}>
           </div>
         </button>
     } else {
@@ -65,7 +66,7 @@ export class Movie extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  isLoggedIn: state.user.id
+  isLoggedIn: state.user.id,
 })
 
 const mapDispatchToProps = (dispatch) => ({
