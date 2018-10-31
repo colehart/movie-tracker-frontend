@@ -56,8 +56,10 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 Nav.propTypes = {
+  userLoggedIn: PropTypes.number,
+  movies: PropTypes.array,
   removeUser: PropTypes.func.isRequired,
-  userLoggedIn: PropTypes.number
+  filterMovies: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

@@ -65,16 +65,22 @@ export class Movie extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   isLoggedIn: state.user.id,
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   toggleFavorite: (movieId) => dispatch(toggleFavorite(movieId)),
 })
 
 Movie.propTypes = {
-  poster_path: PropTypes.string.isRequired
+  movie_id: PropTypes.number.isRequired,
+  overview: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  vote_average: PropTypes.number.isRequired,
+  isFavorite: PropTypes.bool.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movie);

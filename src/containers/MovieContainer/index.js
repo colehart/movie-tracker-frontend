@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieContainer.css';
-import Movie from '../../components/Movie';
+import Movie from '../Movie';
 import { connect } from 'react-redux';
 // import { filterMovies } from '../../actions'
 

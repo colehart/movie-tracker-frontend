@@ -1,23 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Movie should match the snapshot 1`] = `
-<div>
+exports[`Movie Movie Component should match the snapshot 1`] = `
+<div
+  className="m-movie"
+>
   <Link
     replace={false}
-    to="/movie/undefined"
+    to="/movie/1"
   >
     <div
-      className="m-movie"
+      className="m-movie-poster"
     >
-      <div
-        className="m-movie-poster"
-      >
-        <img
-          alt="Click here for movie details."
-          className="m-poster"
-          src="http://image.tmdb.org/t/p/w342//something.jpg"
-        />
-      </div>
+      <img
+        alt="Click here for movie details."
+        className="m-poster"
+        src="http://image.tmdb.org/t/p/w342//poster-path1.jpg"
+      />
     </div>
   </Link>
   <NavLink
