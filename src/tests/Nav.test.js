@@ -29,31 +29,6 @@ describe('Nav', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    // it('should match snapshot while hovering over login', () => {
-    // // wrapper.find('.login-btn').simulate('mouseover')
-    // const mockEvent = {
-    //   target: {
-    //     classList: ['login-text']
-    //   }
-    // }
-    // wrapper.instance().handleHover(mockEvent)
-
-
-    // expect(wrapper).toMatchSnapshot()
-    // })
-
-    // it('should call handleHover on hover', () => {
-
-    //   const spy = spyOn(wrapper.instance(), 'handleHover')
-    //   wrapper.instance().forceUpdate()
-    //   const mockEvent = {
-    //     target: {mouseover: true}
-    //   }
-
-    //   wrapper.find('.login-btn').simulate('mouseover', mockEvent)
-    //   expect(spy).toHaveBeenCalled()
-
-    // })
   })
   describe('mapDispatchToProps', () => {
     it('should call dispatch with the removeUser action', () => {

@@ -6,7 +6,7 @@ export const moviesReducer = (state = [], action) => {
     case 'TOGGLE_FAVORITE':
       return state.map(movie => {
 
-        return movie.id === action.movieId ? {...movie, isFavorite: !movie.isFavorite} : movie
+        return movie.movie_id === action.movie_id ? {...movie, isFavorite: !movie.isFavorite} : movie
       })
 
     case 'FILTER_MOVIES':

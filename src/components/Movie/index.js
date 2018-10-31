@@ -17,10 +17,10 @@ export class Movie extends Component {
   }
 
   handleClick = () => {
-    const { id, overview, poster_path, release_date, title, vote_average, isLoggedIn, toggleFavorite } = this.props;
+    const { movie_id, overview, poster_path, release_date, title, vote_average, isLoggedIn, toggleFavorite } = this.props;
     const movie = {
       user_id: isLoggedIn,
-      movie_id: id,
+      movie_id: movie_id,
       overview,
       poster_path,
       release_date,
@@ -29,13 +29,13 @@ export class Movie extends Component {
     }
       console.log(movie)
 
-    toggleFavorite(this.props.id)
+    toggleFavorite(movie_id)
     API.addFavorite(movie)
   }
 
   render() {
     let favoriteBtn;
-    const { poster_path, id, isLoggedIn, toggleFavorite } = this.props;
+    const { poster_path, movie_id, isLoggedIn, toggleFavorite } = this.props;
 
     if (isLoggedIn) {
       favoriteBtn =       
@@ -58,7 +58,7 @@ export class Movie extends Component {
 
     return (
       <div>
-        <Link to={`/movie/${id}`}>
+        <Link to={`/movie/${movie_id}`}>
           <div className='m-movie'>
             <div className='m-movie-poster'>
               <img

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setUser } from '../../actions';
+import { setUser, toggleFavorite } from '../../actions';
 import * as API from '../../utils';
 import './LoginForm.css';
 
@@ -48,17 +48,19 @@ export class LoginForm extends Component {
       this.checkForError(isSigningUp, result)
     } else {
       const result = await this.loginUser();
-
       this.checkForError(isSigningUp, result)
+
     }
   }
 
-  checkForError = (isSigningUp, result) => {
+  checkForError = async (isSigningUp, result) => {
     if (isSigningUp && typeof result === 'object') {
       this.props.setUser(result.id)
       this.props.history.push('/')
     } else if (!isSigningUp && typeof result === 'object') {
       this.props.setUser(result.data.id)
+      const userFavorites = await API.fetchFavorites(result.data.id)
+      this.loadFavorites(userFavorites);
       this.props.history.push('/')
     } else {
       this.setState({
@@ -67,6 +69,12 @@ export class LoginForm extends Component {
     }
   }
 
+  loadFavorites = (userFavorites) => {
+    userFavorites.forEach(userFav => {
+      this.props.toggleFavorite(userFav.movie_id)
+    })
+  }
+ 
   createNewUser = async () => {
     const user = {
       name: this.state.name,
@@ -156,7 +164,8 @@ export class LoginForm extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  setUser: (id) => dispatch(setUser(id))
+  setUser: (id) => dispatch(setUser(id)),
+  toggleFavorite: (movieId) => dispatch(toggleFavorite(movieId))
 })
 
 LoginForm.propTypes = {

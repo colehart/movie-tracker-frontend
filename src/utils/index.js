@@ -13,7 +13,7 @@ export const fetchMovies = async (apiKey) => {
 const cleanMovies = (results) => {
   return results.map(movie => {
     return {
-      id: movie.id,
+      movie_id: movie.id,
       overview: movie.overview,
       poster_path: movie.poster_path,
       release_date: movie.release_date,
@@ -75,3 +75,11 @@ export const loginUser = async (user) => {
     return 'Email and password do not match.'
   }
 }
+
+export const fetchFavorites = async (userId) => {
+  const dataBaseAPI = `http://localhost:3000/api/users/${userId}/favorites`;
+  const response = await fetch(dataBaseAPI);
+  const result = await response.json()
+  return result.data
+}
+

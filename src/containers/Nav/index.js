@@ -11,10 +11,8 @@ export const Nav = (props) => {
 
   const handleHover = (event) => {
     if(!event.target.classList.contains('active')) {
-      console.log(event.target.classList)
       event.target.classList.add('active')
     } else {
-      console.log(event.target.classList)
       event.target.classList.remove('active')
     }
   }
@@ -57,9 +55,10 @@ export const Nav = (props) => {
           </p>
         </div>
       </NavLink>
-      <button
+      <NavLink
         className={userLoggedIn ? "logout-btn" : "hidden"}
         onClick={removeUser}
+        to='/'
       >
         <img
           className="login-icon"
@@ -68,7 +67,7 @@ export const Nav = (props) => {
         <p className="login-text">
           LOGOUT
         </p>
-      </button>
+      </NavLink>
     </nav>
   )
 }
