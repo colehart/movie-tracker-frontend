@@ -49,6 +49,10 @@ export class App extends Component {
           return (
             <MovieDetails {...movie} />
           )}} />
+        <Route
+          exact path='/favorites'
+          render={() => <MovieContainer /> }
+        />
       </div>
     );
   }

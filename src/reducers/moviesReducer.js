@@ -4,11 +4,13 @@ export const moviesReducer = (state = [], action) => {
       return action.movies
 
     case 'TOGGLE_FAVORITE':
-    console.log(action)
       return state.map(movie => {
 
         return movie.id === action.movieId ? {...movie, isFavorite: !movie.isFavorite} : movie
       })
+
+    case 'FILTER_MOVIES':
+      return action.movies.filter(movie => movie.isFavorite)
     default:
       return state
   }

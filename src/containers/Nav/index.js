@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { removeUser } from '../../actions';
+import { removeUser, filterMovies } from '../../actions';
 import userIcon from '../../assets/images/margot.png';
 import './Nav.css';
 
 export const Nav = (props) => {
-  const { userLoggedIn, removeUser } = props
+  const { userLoggedIn, removeUser, movies, filterMovies } = props
 
   const handleHover = (event) => {
     if(!event.target.classList.contains('active')) {
@@ -22,6 +22,7 @@ export const Nav = (props) => {
   return (
     <nav className="nav-container">
       <NavLink
+        onClick={() => filterMovies(movies)}
         to="/favorites"
         className="fav-btn-group"
       >
@@ -73,11 +74,13 @@ export const Nav = (props) => {
 }
 
 export const mapStateToProps = (state) => ({
-  userLoggedIn: state.user.id
+  userLoggedIn: state.user.id,
+  movies: state.movies
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  removeUser: () => dispatch(removeUser())
+  removeUser: () => dispatch(removeUser()),
+  filterMovies: (movies) => dispatch(filterMovies(movies))
 })
 
 Nav.propTypes = {

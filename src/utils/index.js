@@ -18,9 +18,21 @@ const cleanMovies = (results) => {
       poster_path: movie.poster_path,
       release_date: movie.release_date,
       title: movie.title,
+      vote_average: movie.vote_average,
       isFavorite: false
     }
   })  
+}
+
+export const addFavorite = async (movie) => {
+  const url = 'http://localhost:3000/api/users/favorites/new'
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(movie),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  const result = await response.json();
+  console.log('Success:', JSON.stringify(result))
 }
 
 export const addUser = async (user) => {

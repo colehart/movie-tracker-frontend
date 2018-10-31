@@ -16,3 +16,8 @@ export const setUser = (userId) => ({
 export const removeUser = () => ({
   type: 'REMOVE_USER'
 })
+
+export const filterMovies = (movies) => ({
+  type: 'FILTER_MOVIES',
+  movies
+})
