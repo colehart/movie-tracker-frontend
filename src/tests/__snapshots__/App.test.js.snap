@@ -39,5 +39,10 @@ exports[`App App Component should match the snapshot 1`] = `
     path="/movie/:id"
     render={[Function]}
   />
+  <Route
+    exact={true}
+    path="/favorites"
+    render={[Function]}
+  />
 </div>
 `;

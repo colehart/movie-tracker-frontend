@@ -18,10 +18,10 @@ const cleanMovies = (results) => {
       poster_path: movie.poster_path,
       release_date: movie.release_date,
       title: movie.title,
-      vote_average: movie.vote_average,
+      vote_average: movie.votes,
       isFavorite: false
     }
-  })  
+  })
 }
 
 export const addFavorite = async (movie) => {
@@ -38,7 +38,7 @@ export const addFavorite = async (movie) => {
 export const addUser = async (user) => {
   const dataBaseAPI = 'http://localhost:3000/api/users/new';
 
-  try { 
+  try {
     const response = await fetch(dataBaseAPI, {
       method: 'POST',
       body: JSON.stringify(user),
@@ -48,7 +48,7 @@ export const addUser = async (user) => {
     })
     if (!response.ok) {
       throw new Error(response.statusText);
-    } 
+    }
     return await response.json();
   } catch (error){
     return 'Email has already been used';
@@ -70,7 +70,7 @@ export const loginUser = async (user) => {
       throw new Error(response.statusText);
     } else {
       return await response.json();
-    } 
+    }
   } catch (error) {
     return 'Email and password do not match.'
   }
