@@ -5,8 +5,7 @@ export const fetchMovies = async (apiKey) => {
       throw new Error(response.statusText);
   } else {
     const movieData = await response.json();
-    const cleanData = cleanMovies(movieData.results)
-    return cleanData
+    return cleanMovies(movieData.results)
   }
 }
 

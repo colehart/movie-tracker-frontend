@@ -30,7 +30,8 @@ describe('Movie', () => {
   describe('mapStateToProps', () => {
     it('should parse the movies from state', () => {
       const mockState = {
-        user: mockUser
+        user: mockUser,
+        movies: mockFavMovies
       }
 
       const expected = mockUser.id

@@ -35,6 +35,7 @@ describe('App', () => {
   describe('mapStateToProps', () => {
     it('should parse the moves from state', () => {
       const mockState = {
+        user: mockUser,
         movies: mockMovies
       }
 

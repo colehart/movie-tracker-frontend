@@ -7,9 +7,9 @@ import * as API from '../../utils'
 import { toggleFavorite } from '../../actions';
 import './Movie.css';
 
-
+// make functional
 export class Movie extends Component {
-  handleClick = () => {
+  handleClick = async () => {
     const { movie_id, overview, poster_path, release_date, title, vote_average, isLoggedIn, toggleFavorite } = this.props;
     const movie = {
       user_id: isLoggedIn,
@@ -21,8 +21,8 @@ export class Movie extends Component {
       vote_average,
     }
 
+    await API.addFavorite(movie)
     toggleFavorite(movie_id)
-    API.addFavorite(movie)
   }
 
   render() {

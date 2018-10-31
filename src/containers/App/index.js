@@ -16,7 +16,7 @@ import './App.css';
 export class App extends Component {
   async componentDidMount() {
     const movies = await API.fetchMovies(apiKey)
-    await this.props.addMovies(movies)
+    this.props.addMovies(movies)
   }
 
   render() {
@@ -52,6 +52,7 @@ export class App extends Component {
           exact path='/favorites'
           render={() => <MovieContainer /> }
         />
+      {/* Add switch and Route with path='' rendering render={404 html}*/}
       </div>
     );
   }
