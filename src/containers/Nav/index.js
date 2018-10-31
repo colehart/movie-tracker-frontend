@@ -9,14 +9,6 @@ import './Nav.css';
 export const Nav = (props) => {
   const { userLoggedIn, removeUser, movies, filterMovies } = props
 
-  const handleHover = (event) => {
-    if(!event.target.classList.contains('active')) {
-      event.target.classList.add('active')
-    } else {
-      event.target.classList.remove('active')
-    }
-  }
-
   return (
     <nav className="nav-container">
       <NavLink
@@ -24,15 +16,9 @@ export const Nav = (props) => {
         to="/favorites"
         className={userLoggedIn ? "fav-btn-group" : "hidden"}
       >
-        <div
-          className="fav-btn-nav"
-          onMouseOver={handleHover}
-          onMouseOut={handleHover}
-        >
+        <div className="fav-btn-nav">
           <span className="num-favs">0</span>
-          <p
-            className={`favorites-text`}
-          >
+          <p className={`favorites-text`}>
             FAVORITES
           </p>
         </div>
@@ -41,11 +27,7 @@ export const Nav = (props) => {
         to="/login"
         className={userLoggedIn ? "hidden" : "show"}
       >
-        <div
-          className="login-btn"
-          onMouseOver={handleHover}
-          onMouseOut={handleHover}
-        >
+        <div className="login-btn">
           <img
             className="login-icon"
             src={ userIcon }
@@ -56,7 +38,7 @@ export const Nav = (props) => {
         </div>
       </NavLink>
       <NavLink
-        className={userLoggedIn ? "logout-btn" : "hidden"}
+        className={userLoggedIn ? "login-btn" : "hidden"}
         onClick={removeUser}
         to='/'
       >

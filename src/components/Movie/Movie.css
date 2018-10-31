@@ -36,3 +36,7 @@
   justify-content: center;
   color: #ffffff;
 }
+
+.active .m-fav-btn {
+  background-image: url('../../assets/images/hatFull-red.svg');
+}

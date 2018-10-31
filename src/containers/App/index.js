@@ -20,7 +20,7 @@ export class App extends Component {
   }
 
   render() {
-    const { user } = this.props
+    // const { user } = this.props
     return (
       <div className="a-App">
         <header className="a-header-container">
@@ -59,7 +59,7 @@ export class App extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  user: state.user,
+  // user: state.user,
   movies: state.movies
 })
 
@@ -69,7 +69,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 App.propTypes = {
-  user: PropTypes.object.isRequired,
+  // user: PropTypes.object.isRequired,
   addMovies: PropTypes.func.isRequired
 }
 

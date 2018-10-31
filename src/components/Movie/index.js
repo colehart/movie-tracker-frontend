@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { dispatch } from 'redux';
 import { NavLink, Link } from 'react-router-dom';
 
-import fullHat from '../../assets/images/hatFull-red.svg'
-import emptyHat from '../../assets/images/hatOutline-blue.svg';
 import * as API from '../../utils'
 import { toggleFavorite } from '../../actions';
 import './Movie.css';
 
 
 export class Movie extends Component {
-  constructor() {
-    super()
-  }
-
   handleClick = () => {
     const { movie_id, overview, poster_path, release_date, title, vote_average, isLoggedIn, toggleFavorite } = this.props;
     const movie = {
@@ -27,7 +20,6 @@ export class Movie extends Component {
       title,
       vote_average,
     }
-      console.log(movie)
 
     toggleFavorite(movie_id)
     API.addFavorite(movie)
@@ -35,11 +27,11 @@ export class Movie extends Component {
 
   render() {
     let favoriteBtn;
-    const { poster_path, movie_id, isLoggedIn, toggleFavorite } = this.props;
+    const { poster_path, movie_id, isLoggedIn } = this.props;
 
     if (isLoggedIn) {
-      favoriteBtn =       
-        <button className='m-fav-container' 
+      favoriteBtn =
+        <button className='m-fav-container'
           onClick={this.handleClick}
         >
           <p className='m-fav-text'>FAVORITE</p>
@@ -47,8 +39,8 @@ export class Movie extends Component {
           </div>
         </button>
     } else {
-      favoriteBtn = 
-        <NavLink className='m-fav-container' 
+      favoriteBtn =
+        <NavLink className='m-fav-container'
           to='/login'>
           <p className='m-fav-text'>FAVORITE</p>
           <div className='m-fav-btn'>
