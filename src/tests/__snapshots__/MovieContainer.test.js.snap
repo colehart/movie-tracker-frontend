@@ -7,7 +7,6 @@ exports[`MovieContainer MovieContainer Component should match the snapshot 1`] =
   <Connect(Movie)
     id={1}
     isFavorite={false}
-    key="1"
     overview="Great film."
     poster_path="poster-path1.jpg"
     release_date="2014-02-26"
@@ -16,7 +15,6 @@ exports[`MovieContainer MovieContainer Component should match the snapshot 1`] =
   <Connect(Movie)
     id={2}
     isFavorite={false}
-    key="2"
     overview="Real good film."
     poster_path="poster-path2.jpg"
     release_date="2015-03-27"
