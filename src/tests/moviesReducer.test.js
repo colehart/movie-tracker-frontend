@@ -1,6 +1,6 @@
 import { moviesReducer } from '../reducers/moviesReducer';
 import * as Actions from '../actions';
-import { mockMovies } from './testMocks';
+import { mockMovies, mockFavMovieId, mockFavMovies } from './testMocks';
 
 describe('moviesReducer', () => {
   let movies;
@@ -21,6 +21,16 @@ describe('moviesReducer', () => {
     const expected = movies;
 
     const result = moviesReducer(initialState, Actions.addMovies(movies))
+
+    expect(result).toEqual(expected)
+
+  })
+
+  it('should return state with a favorited movie', () => {
+    const initialState = mockMovies;
+    const expected = mockFavMovies;
+
+    const result = moviesReducer(initialState, Actions.toggleFavorite(mockFavMovieId))
 
     expect(result).toEqual(expected)
 

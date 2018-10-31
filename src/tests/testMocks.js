@@ -40,6 +40,27 @@ export const mockMovies = [
   }
 ]
 
+export const mockFavMovies = [
+  {
+    id: 1,
+    overview: "Great film.",
+    poster_path: "poster-path1.jpg",
+    release_date: "2014-02-26",
+    title: "The Grand Budapest Hotel",
+    isFavorite: true
+  },
+  {
+    id: 2,
+    overview: "Real good film.",
+    poster_path: "poster-path2.jpg",
+    release_date: "2015-03-27",
+    title: "The Life Aquatic with Steve Zissou",
+    isFavorite: false
+  }
+]
+
+export const mockFavMovieId = 1
+
 const mockName = 'Wes'
 const mockEmail = 'wes@anderson.com'
 const mockPassword = 'password'
