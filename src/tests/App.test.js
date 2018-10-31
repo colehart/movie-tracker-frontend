@@ -40,7 +40,6 @@ describe('App', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(expected)
     })
-
   })
 
   describe('mapStateToProps', () => {

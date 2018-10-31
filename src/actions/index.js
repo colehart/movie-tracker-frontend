@@ -5,12 +5,12 @@ export const addMovies = (movies) => ({
 
 export const toggleFavorite = (movieId) => ({
   type: 'TOGGLE_FAVORITE',
-  movieId
+  movieId: movieId
 })
 
 export const setUser = (userId) => ({
   type: 'SET_USER',
-  userId
+  userId: userId
 })
 
 export const removeUser = () => ({
