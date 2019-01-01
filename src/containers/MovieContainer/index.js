@@ -20,6 +20,9 @@ export const MovieContainer = (props) => {
   )
 }
 
+
+
+
 export const mapStateToProps = (state) => ({
   movies: state.movies,
   isLoggedIn: state.user.id,
